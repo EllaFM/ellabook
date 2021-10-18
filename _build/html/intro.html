@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>Introduction &#8212; Fluids</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,8 +28,11 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/_static/mystyle.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
@@ -51,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="1. Mathematical ideas" href="fluids/mathideas1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -70,10 +73,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logo.jpg" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">Fluids</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -84,19 +87,34 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Welcome to your Jupyter Book
+   Introduction
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="fluids/mathideas1.html">
+   1. Mathematical ideas
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="fluids/mathideas2.html">
+   2. Mathematical ideas 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/mathideas3.html">
+   3. Mathematical ideas 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/navstok.html">
+   4. Navier-Stokes Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/demo-exercise.html">
+   5. A title
   </a>
  </li>
 </ul>
@@ -189,19 +207,16 @@
         
               <div>
                 
-  <div class="section" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this headline">¶</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note!</p>
-</div>
-<p>And here is a code block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
-</pre></div>
-</div>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Fluid dynamics is the study of flow. Since anything that flows can be thought of as a fluid, this field of study covers a tremendous range of applications, including aerodynamics, meteorology, hydraulics, oceanography, astrophysical dynamics, acoustics, hemodynamics (blood flow) and mucus flows. Principles of fluid dynamics have even been applied to the study of granular flows, such as dry sand, vehicular traffic and crowd dynamics.</p>
+<p>Despite the vast range of applications, most of these phenomena can be examined by just three unifying principles:</p>
+<ul class="simple">
+<li><p>Conservation of mass</p></li>
+<li><p>Conservation of momentum</p></li>
+<li><p>Conservation of energy</p></li>
+</ul>
+<p>For many flows (this course), we can neglect thermodynamic effects, and in that case we can also get by without conservation of energy. This chapter introduces the equations of conservation of mass and conservation of momentum.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -231,7 +246,7 @@ structured.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">Markdown Files</a>
+    <a class='right-next' id="next-link" href="fluids/mathideas1.html" title="next page"><span class="section-number">1. </span>Mathematical ideas</a>
 
         </div>
         
@@ -241,7 +256,7 @@ structured.</p>
     <div class="container">
       <p>
         
-          By The Jupyter Book Community<br/>
+          By Ella Metcalfe<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

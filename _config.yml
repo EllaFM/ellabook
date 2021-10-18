@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: Fluids
+author: Ella Metcalfe
+logo: logo.jpg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -30,3 +30,29 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - dollarmath
+    - html_image
+    - html_admonition
+    - colon_fence
+    - deflist
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+  myst_dmath_double_inline: true
+
+sphinx:
+  config:
+    html_css_files:
+      - "_static/mystyle.css"
+  extra_extensions:
+    - sphinx_exercise
+
+header-includes:
+  - \usepackage{esint}

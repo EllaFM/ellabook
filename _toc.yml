@@ -3,6 +3,11 @@
 
 format: jb-book
 root: intro
+options:
+  numbered: True
 chapters:
-- file: markdown
-- file: notebooks
+- file: fluids/mathideas1
+- file: fluids/mathideas2
+- file: fluids/mathideas3
+- file: fluids/navstok
+- file: fluids/demo-exercise
