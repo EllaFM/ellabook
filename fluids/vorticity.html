@@ -294,17 +294,17 @@
 <div class="section" id="the-vorticity-equation">
 <h2><span class="section-number">9.2. </span>The vorticity equation<a class="headerlink" href="#the-vorticity-equation" title="Permalink to this headline">¶</a></h2>
 <p>Let us return to the version of Euler’s equation that we gave earlier in <a class="reference internal" href="bernoulli.html#equation-vorticity-head">(8.4)</a> for a conservative body force:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3fe6317-7f7d-46fe-abed-630833178c30">
-<span class="eqno">(9.1)<a class="headerlink" href="#equation-d3fe6317-7f7d-46fe-abed-630833178c30" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \underline{u}}{\partial t}+\underline{\omega}\times\underline{u}=-\nabla H.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b1c931a7-a294-4190-8c1a-6132c90c8c6e">
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-b1c931a7-a294-4190-8c1a-6132c90c8c6e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \underline{u}}{\partial t}+\underline{\omega}\times\underline{u}=-\nabla H.\end{equation}\]</div>
 <p>Since “curlgrad”=0, we can eliminate the head by taking the curl:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4bdce166-e463-4e32-910b-d91f149c370e">
-<span class="eqno">(9.2)<a class="headerlink" href="#equation-4bdce166-e463-4e32-910b-d91f149c370e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \underline{\omega}}{\partial t}+\nabla\times(\underline{\omega}\times\underline{u})=\underline{0}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f77bdab0-40e2-4145-8cb1-c6a844ae8ef5">
+<span class="eqno">(9.2)<a class="headerlink" href="#equation-f77bdab0-40e2-4145-8cb1-c6a844ae8ef5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \underline{\omega}}{\partial t}+\nabla\times(\underline{\omega}\times\underline{u})=\underline{0}.\end{equation}\]</div>
 <p>The second term can be expanded using vector identities to obtain the following equation for the material derivative of the vorticity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-80e5787a-1521-40b7-a73e-aeeafd4f7c08">
-<span class="eqno">(9.3)<a class="headerlink" href="#equation-80e5787a-1521-40b7-a73e-aeeafd4f7c08" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{D\underline{\omega}}{D t}=(\underline{\omega}.\nabla)\underline{u}-\underline{\omega}(\nabla.\underline{u}).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6715918a-358b-47e1-8089-a71bbbfe87d0">
+<span class="eqno">(9.3)<a class="headerlink" href="#equation-6715918a-358b-47e1-8089-a71bbbfe87d0" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{D\underline{\omega}}{D t}=(\underline{\omega}.\nabla)\underline{u}-\underline{\omega}(\nabla.\underline{u}).\end{equation}\]</div>
 <p>In an incompressible flow there is no divergence of the velocity field and so we obtain the vorticity transport equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1d70ea8a-bbcd-4941-b467-768419357a69">
-<span class="eqno">(9.4)<a class="headerlink" href="#equation-1d70ea8a-bbcd-4941-b467-768419357a69" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{D\underline{\omega}}{D t}=(\underline{\omega}.\nabla)\underline{u}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3c6655cb-ffad-4184-9098-bdb688e10287">
+<span class="eqno">(9.4)<a class="headerlink" href="#equation-3c6655cb-ffad-4184-9098-bdb688e10287" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{D\underline{\omega}}{D t}=(\underline{\omega}.\nabla)\underline{u}.\end{equation}\]</div>
 <p>The term on the right is called the “vortex stretching” term. It gets its non-zero contribution from the component of the velocity gradient parallel to <span class="math notranslate nohighlight">\(\underline{\omega}\)</span>, in which case vortex lines are “stretched” by the velocity field, causing them to spin faster. This effect is involved in the formation of tornadoes.</p>
 <div class="theorem admonition">
 <p class="admonition-title">Tornado formation</p>
@@ -313,11 +313,11 @@
 <p><em>Note: It should be recognised that the formation of a vortex line is a viscous phenomenon!</em></p>
 </div>
 <p>For two-dimensional flows the vortex stretching term is zero:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd7850da-7425-4c90-b00b-ab63df904293">
-<span class="eqno">(9.5)<a class="headerlink" href="#equation-bd7850da-7425-4c90-b00b-ab63df904293" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u}=(u(x,y),v(x,y)) \quad \Rightarrow \quad \underline{\omega}=(0,0,\omega), \quad \omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y} \qquad \Rightarrow \quad (\underline{\omega}.\nabla)\underline{u}=\underline{0}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5dba8000-9fd5-4a59-a045-1101db1ef18a">
+<span class="eqno">(9.5)<a class="headerlink" href="#equation-5dba8000-9fd5-4a59-a045-1101db1ef18a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u}=(u(x,y),v(x,y)) \quad \Rightarrow \quad \underline{\omega}=(0,0,\omega), \quad \omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y} \qquad \Rightarrow \quad (\underline{\omega}.\nabla)\underline{u}=\underline{0}\end{equation}\]</div>
 <p>In this case, the vorticity transport equation reduces to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-574046be-921b-4b04-a0ab-ccfa6d55c0a7">
-<span class="eqno">(9.6)<a class="headerlink" href="#equation-574046be-921b-4b04-a0ab-ccfa6d55c0a7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{D\underline{\omega}}{Dt}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2cf5ed5a-1400-4925-bf7b-9674f0e6b441">
+<span class="eqno">(9.6)<a class="headerlink" href="#equation-2cf5ed5a-1400-4925-bf7b-9674f0e6b441" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{D\underline{\omega}}{Dt}=0\end{equation}\]</div>
 <p>which tells us that the vorticity remains constant following the fluid.</p>
 <div class="warning admonition">
 <p class="admonition-title">The persistence of irrotational flow in an inviscid fluid</p>
