@@ -42,7 +42,7 @@ parse:
     - colon_fence
     - deflist
     - linkify
-    - replacements
+    #- replacements
     - smartquotes
     - substitution
   myst_dmath_double_inline: true
@@ -51,8 +51,12 @@ sphinx:
   config:
     html_css_files:
       - "_static/mystyle.css"
+    bibtex_reference_style: author_year
   extra_extensions:
     - sphinx_exercise
+
+output:
+  html_document
 
 header-includes:
   - \usepackage{esint}

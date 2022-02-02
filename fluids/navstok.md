@@ -1,246 +1,133 @@
-# Navier-Stokes Equations
+# Shear stress and viscosity
 
-## The continuum hypothesis
+**In this section:**
+* What does the viscosity of a fluid measure?
+* How is viscosity related to shear stress?
+* Can we ever safely ignore shear-stress effects?
+* Do the famous Navier-Stokes equations apply to all fluids?
 
-So that we can use the tools of calculus, we treat the fluid as if it were continuous in structure and we regard physical quantities as locally uniform. This also means we can treat gases and liquids in the same way, since the equations of motion are independent of the particle structure.
+## The inviscid case
 
-An illustration of the idea is shown below, applied to measurements of density. We ignore molecular fluctuations, and consider a locally averaged measure of density based on the mean free path between atoms.
+At the end of the last section we saw that if there is no shear stress within the fluid then we obtain the following equation:
+
+```{math}
+:label: consofmom7
+\frac{\partial \underline{u}}{\partial t}+\underline{u}.\nabla\underline{u}=-\frac{1}{\rho}\nabla p+\underline{F}.
+```
+
+This circumstance would occur within a body of fluid that is moving uniformly, as shown in the flow profile below. Each fluid element moves in perfect lockstep with its neighbours and so no shear force is exerted.
 
 <br>
 
-```{image} navstok_img/continuum_hypothesis.png
+```{image} navstok_img/uniform.png
 ---
-name: continuum_hypothesis
-alt: some alternative text
+name: uniform flow
+alt: alternative description
 align: center
 scale: 80%
 ---
 ```
+<br>
+
+However, in most real scenarios we do not encounter fluids moving uniformly and so adjacent fluid elements exert shear stresses on their neighbours. Consider, for example, the below profile in which the upper layers of fluid flow faster. Each layer then exerts a resistive force on the one above it, due to internal "friction".
+
+```{image} navstok_img/shear.png
+---
+name: shear flow
+alt: alternative description
+align: center
+scale: 80%
+---
+```
+<br>
+
+For non-uniform motion, the assumption of no shear stress implies that layers of fluid can slip smoothly past each other without experiencing any internal fluid resistance. It also implies that the fluid would slip past a solid boundary without any transfer of momentum.
+
+This assumption is unphysical. However, it may be a good approximation for fluids that are not very *viscous* if the fluid region that we are interested in is not close to a solid boundary. For a description of viscosity, see {ref}`newtonian-case`.
+
+```{admonition} Superfluids
+:class: theorem
+All fluids have some internal resistance (viscosity) except for an exotic class of fluids called [superfluids](https://www.britannica.com/science/superfluidity). Liquid helium is a superfluid at temperatures close to absolute zero. Research has also been undertaken at UCL to demonstrate superfluid properties of structures involving [polariton](https://qlm-ucl.org/) quasi-particles, which result from interaction between light (photons) and matter (excitons).
+
+```
+
+(newtonian-case)=
+## The Newtonian case
+
+The amount of internal friction depends on properties of the fluid. In a so-called "Newtonian" fluid the shear stress is linearly proportional to the velocity gradient, which may be written as
+
+```{math}
+:label: consofmom6
+\underline{\tau}_{i,j}=\mu\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)
+```
+
+The figure below illustrates a flow profile with a nonlinear shear velocity gradient $\displaystyle \frac{\partial u}{\partial z}$. We will see later on that this type of flow profile tends to arise near to a solid boundary, due to fluid particles "sticking" to the boundary.
 
 <br>
 
-In actuality, the concept of "density" does not apply very meaningfully at the microscopic level, since the density at each point is defined by either being "inside" or "outside" an atom.
-
-
-## Mass transport
-Consider the mass flow through an arbitrary volume of fluid at a fixed location, like the "bag" shown in the image on the left. We assume matter is neither created or destroyed.
-
-```{image} navstok_img/massflux.png
+```{image} navstok_img/blasius.png
 ---
-name: mass_flux
-alt: illustration of fluid element
-align: left
-scale: 40%
+name: strong-shear
+alt: a strong shear
+align: center
+scale: 80%
 ---
 ```
+<br>
 
-The following statement says that the change in mass of the fluid parcel is equal to the net mass flow into the enclosing surface $\delta A$ per unit time.
+The constant of proportionality $\mu$ appearing in the formula above is called the viscosity (or "dynamic viscosity"), measured in $\mathrm{Pa.s}$ (Pascal-seconds). It measures the tendency for fluid layers to be dragged by their neighbours and can therefore be thought of as a measure of the "diffusivity of momentum". It is a material property of the fluid under particular conditions, such as temperature. A list of viscosities of common fluids, and some not-so-common, can be found at: https://en.wikipedia.org/wiki/List_of_viscosities
 
-$$
-\frac{\mathrm{d}}{\mathrm{d}t}\iiint_{\delta V}\rho\mathrm{d}V=-\iint_\mathrm{\delta A}\rho \underline{v}.\mathrm{d}\underline{S}, \qquad \mathrm{d}\underline{S}=\hat{\underline{n}}\mathrm{d}S.
-$$ (massflux1)
+```{admonition} Understanding viscosity
+:class: theorem
+Viscosity is a measure of a fluid's thickness, or how easily it flows. Elements in more viscous fluids exert greater internal resistance during fluid motion. Honey, for example, has a much higher viscosity than water so it flows slowly when you try to pour it.
 
-The negative sign appearing in the formula occurs because the normal direction is outward from the surface, as illustrated in the image.
-
-The time derivative on the left hand side of equation {eq}`massflux1` can be brought inside the integral because for a fixed fluid volume the spatial and temporal variables are independent. On the right hand side the divergence theorem can be used to write the surface integral as a volume integral. Bringing all terms over to the left then gives
-
-```{math}
-:label: netmassflow2
-\iiint_{\delta V}\biggr(\frac{\partial \rho}{\partial t}+\nabla.(\rho\underline{v})\biggr)\mathrm{d}V=0,
+A more accurate way to understand and measure viscosity is to consider an object such as a marble dropped into a cylinder of the fluid under gravity. In a low viscosity fluid the marble will reach the bottom of the fluid cylinder quickly, as its momentum is not substantially diffused by the fluid, whilst in a high viscosity fluid the marble will take a long time to reach the bottom as its momentum is diffused to surrounding layers of fluid.
 ```
 
-and since the volume $\delta V$ is arbitrary this requires that the integrand itself is zero. By using the product rule to expand the intergrand, we can finally obtain
+## The non-Newtonian case
 
-```{math}
-:label: netmassflow3
-\frac{D\rho}{Dt}+\rho\nabla.\underline{v}=0.
+The Newtonian fluid relationship {eq}`consofmom6` is an experimental result. It holds under a wide range of conditions for a wide range of fluids, including air, water and most oils and syrups. However, it does not hold for all fluids under all conditions. In fact, due to the abundance of long-chain polymers in biological fluids, Newtonian behaviour may be the exception in biological contexts, rather than the rule.
+
+### Nonlinear response to shear
+In real fluids there may be a nonlinear relationship between the shear stress and the velocity gradient. This may also be interpreted as an increase/decrease in the effective viscosity under application of shear. Examples  of shear-thinning fluids include paint, whipped cream, blood, saliva, lava and toothpaste. Examples of shear-thickening fluid include oobleck (which is a mixture of cornstarch and water) and the synovial fluid that lubricates our joints. Some fluids exhibit these properties only above/below a certain shear threshold.
+
+**Fun demonstrations:**
+
+* [How to put ketchup on your fries like a pro](https://www.youtube.com/watch?v=KB43fM_ozKQ)
+* [Kaye effect for shampoos](https://www.youtube.com/watch?v=eADS4oDTS4o)
+* [The science of cornstarch and water (oobleck)](https://www.youtube.com/watch?v=mYTerCbDUzE&t=119s)
+
+### Viscoelasticity
+Some fluids become elastic when they are compressed or stretched, in the manner of an elastic solid. For these fluids, the application of a strain results in a stress in the same direction. Such fluids are called *viscoelastic* fluids. Examples include polyelectrolytes in which the electrostatic forces resist a change of shape, and liquid polymers in which the tangled polymers act as springs.
+
+The relationship between stress and strain is generally Hookean (i.e. linear) and so the equations of motion can be modified adding a stress term that is proportional to the strain.
+
+**Fun demonstrations:**
+
+* [Boger fluid (constant viscosity elastic fluid)](https://www.youtube.com/watch?v=fZSUToTkkW0&t=275s)
+* [Viscoelastic fluid simulation](https://www.youtube.com/watch?v=MCHw6fUyLMY)
+
+```{exercise}
+Research one example of a non-Newtonian fluid, and write 150 words about why it is non-Newtonian.
 ```
 
-```{admonition} Important case: Mass transport for incompressible flow
-If the density of each fluid particle does not change as it moves around, then the flow is said to be **incompressible**. In that case,  $\frac{D\rho}{D t}=0$, which leads to the following condition for incompressible flow :
+## Navier-Stokes equations
 
-\begin{equation*}
-\nabla.\underline{v}=0
-\end{equation*}
-In practice, fluid phenomena that are well below the speed of sound can be treated as incompressible
-```
+The conservation of momentum equation for a Newtonian fluid, together with the conservation of mass equation for incompressible flow are called the Navier-Stokes equations. The equations are given below, where $p$ is the hydrostatic pressure (mean normal stress), and $\nu=\frac{\mu}{\rho}$ is called the kinematic viscosity.
 
-
-## Cauchy stress theorem
-"Stress" is a measure of the internal forces, such as pressure or friction acting between neighbouring fluid elements. We cannot discuss stress without first defining a particular surface that the stress acts on, since friction and pressure depend on the surface orientation.
-
-However, the stress for a given surface can be expressed as a vector of components parallel to each coordinate direction, and according to Cauchy's stress theorem, the stress vector on any plane through a point can be found by knowing the stress vector on each of three mutually perpendicular planes. We will consider planes perpendicular to the coordinate axes.
-
-The Cauchy stress tensor (deviatoric stress tensor)
-
-```{math}
-:label: deviatoricstress1
-\underline{\sigma}=\left[\begin{array}{ccc}\sigma_{1,1}&\sigma_{1,2}&\sigma_{1,3}\\\sigma_{2,1}&\sigma_{2,2}&\sigma_{2,3}\\\sigma_{3,1}&\sigma_{3,2}&\sigma_{3,3}\end{array}\right]=\left[\begin{array}{ccc}\sigma_{xx} & \tau_{xy}& \tau_{xz}\\ \tau_{yx} & \sigma_{yy} & \tau_{yz}\\\tau_{zx} &\tau{zy} &\sigma_{zz}\end{array}\right]
-```
-
-defines the normal and shear stress components $$\sigma_{i,j}$$ acting on a plane perpendicular to each axis, as illustrated below:
-
-stress tensor
-
-We now consider the stress vector $\underline{T}^{(\underline{n})}$ acting on an arbitrary surface $\delta{A}$ perpendicular to unit vector $\hat{\underline{n}}$ as illustrated in the figure below.
-
-cauchy stress
-
-
-
- We may apply Newton's second law to the tetrahedron shown, allowing the mass of the tetrahedron to approach zero (so that the sum of the forces also approaches zero):
-
-```{math}
-:label: deviatoricstress2
-\underline{T}^{(n)}\delta A-\underline{T}^{(\underline{e}_1)}\delta A_1-\underline{T}^{(\underline{e}_2)}\delta A_2-\underline{T}^{(\underline{e}_3)}\delta A_3=0,
-```
-
-where $\delta A_j$ is the projection of $\delta A$ onto the illustrated face, given by $\delta A_j=\hat{\underline{n}}.\underline{e}_j\delta A=\hat{\underline{n}}_j\delta A.$
-
-This gives
-
-```{math}
-:label: deviatoricstress3
-\underline{T}^{(n)}=\underline{\sigma}.\hat{\underline{n}}.
-```
-
-
-
-## Conservation of momentum
-By Newton's second law, the change in momentum is given by the sum of all forces acting on the volume:
-
-```{math}
-:label: consofmom1
-\frac{\mathrm{d}}{\mathrm{d}t}\iiint_{\delta V}\rho\underline{v}\ \mathrm{d}V=\iiint_{\delta V}\rho\underline{F}\ \mathrm{d}V+\iint_{\delta S}\underline{\sigma}(t,\underline{x}).\hat{\underline{n}}\mathrm{d}S
-```
-
-in which
-
-$\rho\underline{F}$ is the "body force" per unit volume, such as gravitational, magnetic or Coriolis forces,
-$\underline{\sigma}(t,\underline{x}).\hat{\underline{n}}$ is the deviatoric stress tensor.
-
-
-This time, we have to choose a "material volume", meaning one that moves with the fluid, so that we track the same particles. In that case $\rho\mathrm{d}V$ is constant so we may rewrite the left-hand side as
-
-```{math}
-:label: consofmom2
-\frac{\mathrm{d}}{\mathrm{d}t}\iiint_{\delta V}\rho\underline{v}\mathrm{d}V=\iiint_{\delta V}\rho\frac{D\underline{v}}{D t}\mathrm{d}V
-```
-
-We use the divergence theorem again on the last term, and combine the three integrals for our arbitrary material volume $$\delta V$$ to obtain
-
-```{math}
-:label: consofmom3
-\rho\frac{D\underline{v}}{D t}=\nabla.\underline{\sigma}+\rho\underline{F}
-```
-
-The Cauchy stress tensor $$\underline{\sigma}$$ can be split up to separate normal stress components (pressure) and shear stress components. This gives the result
-
-```{math}
-:label: consofmom4
-\rho\frac{D\underline{v}}{D t}=\nabla p+\nabla.\underline{\tau}+\rho\underline{F}
-```
-
-
-
-Newtonian vs non-Newtonian fluids
-In a so-called "Newtonian" fluid the shear stress is linearly proportional to the velocity gradient, which may be written as
-
-```{math}
-:label: consofmom5
-\underline{\tau}_{i,j}=-\mu\left(\frac{\partial v_i}{\partial x_j}+\frac{\partial v_j}{\partial x_i}\right)
-```
-
-The figure below illustrates a flow profile with a strong velocity gradient $\displaystyle \frac{\partial v_1}{\partial x_2}$. We will see later on that this type of flow profile tends to arise near to a solid boundary, due to fluid particles "sticking" to the boundary.
-
-a strong shear
-
-The constant of proportionality $\mu$ appearing in the formula above is called the viscosity (or "dynamic viscosity"), measured in $\mathrm{Pa.s}$ (Pascal-seconds). It measures the tendency for fluid layers to be dragged by their neighbours and can therefore be thought of as a measure of the "diffusivity of momentum". It is a material property of the fluid under particular conditions (e.g. temperature). A list of viscosities of common fluids (and some not-so-common) can be found at: https://en.wikipedia.org/wiki/List_of_viscosities
-
-Loosely speaking, you can think of viscosity as a measure of the fluid's thickness, or how easily it flows. Honey, for example, has a much higher viscosity than water so it flows slowly when you try to pour it. A more accurate way to understand and measure viscosity is to consider an object such as a marble dropped into a cylinder of the fluid under gravity. In a low viscosity fluid the marble will reach the bottom of the fluid cylinder quickly, as its momentum is not substantially diffused by the fluid, whilst in a high viscosity fluid the marble will take a long time to reach the bottom as its momentum is diffused to surrounding layers of fluid.
-
-
-
-The Newtonian fluid relationship law is an experimental result, much like the constitutive law $F=\mu R$ that relates the resisting force between two solid surfaces to the normal reaction. It holds for a wide range of fluids under a wide range of conditions, including air, water and most oils and syrups. However, it does not hold for all fluids under all conditions.
-
-
-
-Non-Newtonian fluids are those which have nonlinear relationship between stress and velocity gradient. Examples  of shear-thinning fluids include paint, whipped cream, blood, saliva*, lava and toothpaste, whilst examples of shear-thickening fluid is oobleck (a mixture of cornstarch and water), and the synovial fluid that lubricates our joints. Some fluids are non-Newtonian only above/below a certain threshold.
-
-*Due to the abundance of long-chain polymers in biological fluids, Newtonian behaviour may be the exception in biological contexts, rather than the rule.
-
-
-
-## Fun demonstrations:
-
-How to put ketchup on your fries like a pro: https://www.youtube.com/watch?v=KB43fM_ozKQ
-Oobleck in a pool : https://thekidshouldseethis.com/post/oobleck-pool
-Oobleck on a speaker: https://www.youtube.com/watch?v=3zoTKXXNQIU
-Kaye effect for shampoos: https://www.youtube.com/watch?v=eADS4oDTS4o
-Boger fluids: https://www.insidescience.org/video/what-boger-fluid
-
-
-Navier-Stokes for Newtonian fluids
-For a Newtonian fluid with zero body force,
-
-```{math}
-:label: navstoknewt
-\frac{D\underline{v}}{D t}=-\frac{1}{\rho}\nabla p+\nu \Delta \underline{v}, \qquad \Delta=\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}
-```
-
-where $p$ is the hydrostatic pressure (mean normal stress), and $\nu=\frac{\mu}{\rho}$ is called the kinematic viscosity.
-
-
-
-The equations can be non-dimensionalised by scaling quantities with respect to characteristic scales of velocity $U$ and length $L$ (see next subchapter) to obtain the final conservation of momentum equations given in the box below.
-
-Navier Stokes equations
-
-For an incompressible, Newtonian fluid, in the absence of any body forces:
-
-```{math}
-:label: navstoknondimconsofmom
-\frac{\partial\underline{v}}{\partial t}+\underline{v}.\nabla \underline{v}=-\nabla p + \mathrm{Re}^{-1} \Delta\underline{v}
-```
-
-```{math}
-:label: navstoknondimincompress
-\nabla.\underline{v}=0
-```
-
-where $\mathrm{Re}=\frac{U L}{\nu}$ is a parameter called the Reynolds number.
+\begin{equation}\frac{\partial\underline{u}}{\partial t}+\underline{u}.\nabla\underline{u}=-\frac{1}{\rho}\nabla p+\nu \nabla^2 \underline{u}+\underline{F},\end{equation}
+\begin{equation}\nabla.\underline{u}=0.\end{equation}
 
 The first equation (conservation of mass) represents a balance between convective acceleration, pressure forces and viscous diffusion. The second equation represents the incompressibility condition.
 
-Written out in full, these equations are
+```{admonition} Euler's equations
+:class: theorem
+The inviscid form of the Navier-Stokes equations (with $\nu=0$) is called Euler's equations.
+```
 
-\begin{align}\frac{\partial v_x}{\partial t}+v_x\frac{\partial v_x}{\partial x}+v_y\frac{\partial v_x}{\partial y}+v_z\frac{\partial v_x}{\partial z}&=-\frac{\partial p}{\partial x}+\mathrm{Re}^{-1}\left(\frac{\partial^2 v_x}{\partial x^2}+\frac{\partial^2 v_x}{\partial y^2}+\frac{\partial^2 v_x}{\partial z^2}\right)\\\frac{\partial v_y}{\partial t}+v_x\frac{\partial v_y}{\partial x}+v_y\frac{\partial v_y}{\partial y}+v_z\frac{\partial v_y}{\partial z}&=-\frac{\partial p}{\partial y}+\mathrm{Re}^{-1}\left(\frac{\partial^2 v_y}{\partial x^2}+\frac{\partial^2 v_y}{\partial y^2}+\frac{\partial^2 v_y}{\partial z^2}\right)\\\frac{\partial v_z}{\partial t}+v_x\frac{\partial v_z}{\partial x}+v_y\frac{\partial v_z}{\partial y}+v_z\frac{\partial v_z}{\partial z}&=-\frac{\partial p}{\partial z}+\mathrm{Re}^{-1}\left(\frac{\partial^2 v_z}{\partial x^2}+\frac{\partial^2 v_z}{\partial y^2}+\frac{\partial^2 v_z}{\partial z^2}\right)\\\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}+\frac{\partial v_z}{\partial z}&=0\end{align} (fullnavstok)
+These equations were first derived and studied in the 1800s. However, despite many decades of research it has still not been proven that the problem is well-defined in the sense of having smooth solutions in all geometries. At the turn of the century the Clay Mathematics institute announced this unsolved problem as one of its seven "[Millennium Prize Problems](https://www.claymath.org/millennium-problems)", with $1 million offered for a solution. The problem remains unsolved today. Nevertheless, mathematicians, scientists and engineers have been using them for nearly 200 years to very good effect for modelling fluid behaviour. The equations have been used for nearly any fluid phenomenon you can think of, from modelling mucous transport to making racing cars as good as they can be, to studying sunspots or the rings of Jupiter!
 
-
-
-It is helpful to classify the study of fluids as follows:
-
-
-
-Incompressible	Compressible
-Inviscid	This course	Acoustics (high speed)
-Viscous	This course in part	Research only!
-
-
-
-
-## Challenge yourself:
-After you have read the notes for this subsection, try to complete the worksheet below without looking at any resources
-
->>> worksheet 1.docx
-
-```{admonition} Big idea: Conservation of mass and momentum
-:class: tip
-The equations governing the motion of fluids are the Navier-Stokes equations, for conservation of mass and momentum. They apply at the macroscopic level, where quantities such as the fluid velocity and density are treated as continuous.
-
-For fluid motions that occur well below the speed of sound, the effects of compressibility can be neglected, and in that case the conservation of mass equation simplifies to the incompressibility condition $\nabla.\underline{v}=0$, where $\underline{v}$ is the velocity field.
-
-The conservation of momentum equation represents a balance between convective acceleration, pressure forces and the diffusion of momentum to neighbouring fluid elements. A wide class of so-called "Newtonian" fluids exhibit a linear relationship between the shear stress and the velocity gradient, in which the constant of proportionality is a material quantity, called the viscosity.
-
-By non-dimensionalising the equations of motion, we can consider motion on different length/velocity scales or in fluids of different viscosity all by varying a single parameter, called the Reynolds number $\mathrm{Re}$.
+```{exercise}
+:label: ex-navstok
+Taking the body force $\underline{F}$ to be zero, write out the Navier-Stokes equations in component form, where $\underline{x}=(x,y,z)$ and $\underline{u}=(u,v,w)$. For the conservation of momentum equation, you may write each of the $(x,y,z)$ components as a separate equation.
 ```

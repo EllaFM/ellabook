@@ -6,8 +6,18 @@ root: intro
 options:
   numbered: True
 chapters:
-- file: fluids/mathideas1
-- file: fluids/mathideas2
-- file: fluids/mathideas3
+- file: fluids/mathideas
+- file: fluids/visualise
+- file: fluids/helmholtz
+- file: fluids/potential
+- file: fluids/conservation
 - file: fluids/navstok
-- file: fluids/demo-exercise
+- file: fluids/steadysoln
+- file: fluids/bernoulli
+- file: fluids/vorticity
+- file: fluids/rotfram
+- file: fluids/ekman
+- file: fluids/waterwaves
+- file: fluids/soundwaves
+- file: fluids/nondimensionalisation
+- file: fluids/reynolds

@@ -52,9 +52,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Mathematical ideas" href="fluids/mathideas1.html" />
+    <link rel="next" title="1. Mathematical background" href="fluids/mathideas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,28 +95,78 @@
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="fluids/mathideas1.html">
-   1. Mathematical ideas
+  <a class="reference internal" href="fluids/mathideas.html">
+   1. Mathematical background
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="fluids/mathideas2.html">
-   2. Mathematical ideas 2
+  <a class="reference internal" href="fluids/visualise.html">
+   2. Visualising fluid motion
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="fluids/mathideas3.html">
-   3. Mathematical ideas 3
+  <a class="reference internal" href="fluids/helmholtz.html">
+   3. Divergence and vorticity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/potential.html">
+   4. The velocity potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/conservation.html">
+   5. Conservation law derivations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fluids/navstok.html">
-   4. Navier-Stokes Equations
+   6. Shear stress and viscosity
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="fluids/demo-exercise.html">
-   5. A title
+  <a class="reference internal" href="fluids/steadysoln.html">
+   7. Steady Euler solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/bernoulli.html">
+   8. Bernoulli’s equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/vorticity.html">
+   9. Vorticity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/rotfram.html">
+   10. Rotational reference frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/ekman.html">
+   11. Geophysical phenomena
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/waterwaves.html">
+   12. Water waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/soundwaves.html">
+   13. Sound waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/nondimensionalisation.html">
+   14. Non-dimensionalisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fluids/reynolds.html">
+   15. Reynolds number
   </a>
  </li>
 </ul>
@@ -199,6 +251,56 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-continuum-hypothesis">
+   The continuum hypothesis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inviscid-flows">
+     Inviscid flows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-archimides-principle">
+     Example: Archimides’ Principle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dead">
+     dead
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#almost-uniform-rotation">
+     Almost uniform rotation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-dead">
+     More dead
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shallow-water-results">
+   Shallow water results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -217,6 +319,108 @@
 <li><p>Conservation of energy</p></li>
 </ul>
 <p>For many flows (this course), we can neglect thermodynamic effects, and in that case we can also get by without conservation of energy. This chapter introduces the equations of conservation of mass and conservation of momentum.</p>
+<div class="section" id="the-continuum-hypothesis">
+<h2>The continuum hypothesis<a class="headerlink" href="#the-continuum-hypothesis" title="Permalink to this headline">¶</a></h2>
+<p>So that we can use the tools of calculus, we treat the fluid as if it were continuous in structure and we regard physical quantities as locally uniform. This also means we can treat gases and liquids in the same way, since the equations of motion are independent of the particle structure.</p>
+<p>An illustration of the idea is shown below, applied to measurements of density. We ignore molecular fluctuations, and consider a locally averaged measure of density based on the mean free path between atoms.</p>
+<br>
+<a class="reference internal image-reference" href="_images/continuum_hypothesis.png" id="continuum-hypothesis"><img alt="some alternative text" class="align-center" id="continuum-hypothesis" src="_images/continuum_hypothesis.png" style="width: 374.40000000000003px; height: 240.0px;" /></a>
+<br>
+<p>In actuality, the concept of “density” does not apply very meaningfully at the microscopic level, since the density at each point is defined by either being “inside” or “outside” an atom.</p>
+<div class="tip admonition">
+<p class="admonition-title">Big idea: Conservation of mass and momentum</p>
+<p>The equations governing the motion of fluids are the Navier-Stokes equations, for conservation of mass and momentum. They apply at the macroscopic level, where quantities such as the fluid velocity and density are treated as continuous.</p>
+<p>For fluid motions that occur well below the speed of sound, the effects of compressibility can be neglected, and in that case the conservation of mass equation simplifies to the incompressibility condition <span class="math notranslate nohighlight">\(\nabla.\underline{v}=0\)</span>, where <span class="math notranslate nohighlight">\(\underline{v}\)</span> is the velocity field.</p>
+<p>The conservation of momentum equation represents a balance between convective acceleration, pressure forces and the diffusion of momentum to neighbouring fluid elements. A wide class of so-called “Newtonian” fluids exhibit a linear relationship between the shear stress and the velocity gradient, in which the constant of proportionality is a material quantity, called the viscosity.</p>
+<p>By non-dimensionalising the equations of motion, we can consider motion on different length/velocity scales or in fluids of different viscosity all by varying a single parameter, called the Reynolds number <span class="math notranslate nohighlight">\(\mathrm{Re}\)</span>.</p>
+</div>
+<p>It is helpful to classify the study of fluids as follows:</p>
+<p>Incompressible	Compressible
+Inviscid	This course	Acoustics (high speed)
+Viscous	This course in part	Research only!</p>
+<div class="section" id="inviscid-flows">
+<h3>Inviscid flows<a class="headerlink" href="#inviscid-flows" title="Permalink to this headline">¶</a></h3>
+<p>Big idea: Steady solutions
+By neglecting viscosity, we obtain Euler’s equation - a differential equation relating the pressure, convective acceleration and body forces. In the special case of steady (time-independent) flows we may further deduce an algebraic relationship between the pressure and velocity. The result, which is known as Bernoulli’s theorem applies only on a streamline, unless the flow is irrotational - in which case it applies everywhere.
+This may seem a very narrow restriction, but in this section we also show that an inviscid flow that is initially irrotational will remain so throughout the subsequent motion. The implication is that irrotational flows are more common than you might expect.</p>
+</div>
+<div class="section" id="example-archimides-principle">
+<h3>Example: Archimides’ Principle<a class="headerlink" href="#example-archimides-principle" title="Permalink to this headline">¶</a></h3>
+<p>If we take the body force to be gravity, <span class="math notranslate nohighlight">\(\underline{g}=(0,0,-g)\)</span> and we assume that the fluid is at rest so that <span class="math notranslate nohighlight">\(\underline{u}=\underline{0}\)</span> then from the conservation of momentum equation <code class="xref eq docutils literal notranslate"><span class="pre">consofmom5</span></code> we obtain a result for the hydrostatic pressure :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0cab589b-5529-44ac-b92e-443c37dceae0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-0cab589b-5529-44ac-b92e-443c37dceae0" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla p =(0,0,-g\rho)\quad \Rightarrow p=K-\rho g z,\end{equation}\]</div>
+<p>where the constant <span class="math notranslate nohighlight">\(K\)</span> is the pressure at <span class="math notranslate nohighlight">\(z=0\)</span>.
+We now calculate the force due to hydrostatic pressure on a body immersed within the fluid:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-40c3b53c-03a9-465b-95b9-5765133b923b">
+<span class="eqno">(2)<a class="headerlink" href="#equation-40c3b53c-03a9-465b-95b9-5765133b923b" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F}=-\int_S p\ \underline{\mathrm{d}S} = - \int_V (\nabla{p}) dV\end{equation}\]</div>
+<p>Here, the minus sign is because the pressure acts inwards on the surface, in the opposite direction to the definition of the normal <span class="math notranslate nohighlight">\(\underline{\mathrm{d}S}.\)</span> The rewriting of the surface integral as a volume integral is a consequence of one of the many corollaries of the divergence theorem.
+From the result <span class="math notranslate nohighlight">\(\nabla p =(0,0,-g\rho)\)</span> we then obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79438e2a-f24d-48eb-8038-72ffec969876">
+<span class="eqno">(3)<a class="headerlink" href="#equation-79438e2a-f24d-48eb-8038-72ffec969876" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F} = \underline{g}\int_V\rho dV\end{equation}\]</div>
+<p>This tells us that there is an upward force on the body which is equal in magnitude to the weight of water displaced.</p>
+</div>
+<div class="section" id="dead">
+<h3>dead<a class="headerlink" href="#dead" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="almost-uniform-rotation">
+<h3>Almost uniform rotation<a class="headerlink" href="#almost-uniform-rotation" title="Permalink to this headline">¶</a></h3>
+<p>In <a class="reference internal" href="fluids/rotfram.html#rotfram-navstok"><span class="std std-numref">Section 10.3</span></a>, the Navier-Stokes equations were presented relative to a rotating frame of reference. We will consider the case of a body of fluid that undergoes weak motion relative to a frame rotating at constant angular velocity <span class="math notranslate nohighlight">\(\underline{\Omega}.\)</span></p>
+<p>Taking <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(L\)</span> to be characteristic length and velocity scales of the motion allows us to compare the size of the inertial term relative to the Coriolis term:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-71404612-78ac-45d4-9bfa-6f2ed0e69f92">
+<span class="eqno">(4)<a class="headerlink" href="#equation-71404612-78ac-45d4-9bfa-6f2ed0e69f92" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{|\underline{u}.\nabla\underline{u}|}{|\underline{\Omega}\times\underline{u}|}\sim \frac{U^2/L}{\Omega U} = \frac{U}{L\Omega}.\end{equation}\]</div>
+<p>If this ratio is much smaller than one then the inertial term can be neglected to a first approximation. We will also suppose that viscous effects may be neglected in the interior of the fluid (i.e. away from any boundaries). The equations of motion then simplify to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f6c8d3eb-c2ff-48e3-86b8-e9472a9abdf5">
+<span class="eqno">(5)<a class="headerlink" href="#equation-f6c8d3eb-c2ff-48e3-86b8-e9472a9abdf5" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial \underline{u}}{\partial t}+2(\underline{\Omega}\times\underline{u})&amp;=-\frac{1}{\rho}\nabla p_R,\\
+\nabla.\underline{u}&amp;=0,\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_R\)</span> denotes the reduced pressure.</p>
+<p>Taking the angular velocity to be <span class="math notranslate nohighlight">\(\underline{\Omega}=(0,0,\Omega)\)</span> and denoting the velocity by <span class="math notranslate nohighlight">\(\underline{u}=(u,v,w)\)</span> gives the following scalar (component) form:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\frac{\partial u}{\partial t} -2\Omega v= -\frac{1}{\rho}\frac{\partial p_R}{\partial x}, \qquad
+\frac{\partial v}{\partial t} +2\Omega u= -\frac{1}{\rho}\frac{\partial p_R}{\partial y}, \qquad
+\frac{\partial w}{\partial t} = -\frac{1}{\rho}\frac{\partial p_R}{\partial z},
+\end{equation*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z} =0
+\end{equation*}\]</div>
+<p>The pressure may be eliminated between the first two momentum equations by cross-differentiation to give:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\frac{\partial}{\partial t}\left(\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)+2\Omega\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right)=0.
+\end{equation*}\]</div>
+<p>The first term  in this is the time derivative of the vorticity, and the second term can be simplified using the mass equation to finally obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6afb8463-a7db-4e71-9a16-cc340f8ef7ff">
+<span class="eqno">(6)<a class="headerlink" href="#equation-6afb8463-a7db-4e71-9a16-cc340f8ef7ff" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \omega}{\partial t}=2\Omega \frac{\partial w}{\partial z}\end{equation}\]</div>
+</div>
+<div class="section" id="more-dead">
+<h3>More dead<a class="headerlink" href="#more-dead" title="Permalink to this headline">¶</a></h3>
+<p>The result given in <a class="reference internal" href="fluids/bernoulli.html#bucket-exercise"><span class="std std-numref">Exercise 8.3</span></a> can be rearranged to obtain an expression for the pressure at each point in the fluid:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-16fa5988-292d-4db4-8d8a-a51e5ac21b09">
+<span class="eqno">(7)<a class="headerlink" href="#equation-16fa5988-292d-4db4-8d8a-a51e5ac21b09" title="Permalink to this equation">¶</a></span>\[\begin{equation}p=p_0+\rho g z - \frac{\rho \omega^2}{2}r^2, \qquad r^2=x^2+y^2\end{equation}\]</div>
+<p>The radial pressure gradient is found to be <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial r}=\rho\omega^2 r\)</span>, which varies linearly towards the centre. This pressure gradient balances the centrifugal acceleration so that the streamlines remain circular.</p>
+</div>
+</div>
+<div class="section" id="shallow-water-results">
+<h2>Shallow water results<a class="headerlink" href="#shallow-water-results" title="Permalink to this headline">¶</a></h2>
+<p>The shallow water dispersion relation is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6057c7db-fe91-4d43-9ae2-df39c085795c">
+<span class="eqno">(8)<a class="headerlink" href="#equation-6057c7db-fe91-4d43-9ae2-df39c085795c" title="Permalink to this equation">¶</a></span>\[\begin{equation}c^2=gh\end{equation}\]</div>
+<p>The result implies that the peak of a wave will travel faster than the base of the wave, which leads to steepening of the wave profile and ultimately wave breaking, which occurs near to the shoreline. Notice that in shallow water the result for the phase-velocity does not depend on the wavelength. Shallow-water gravity waves are non-dispersive.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>For deep water waves:
+(a) Calculate the total energy (per unit length in the <span class="math notranslate nohighlight">\(y\)</span>-direction) in one wavelength:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-881675ff-65a5-4d21-bf23-c2b907c0c555">
+<span class="eqno">(9)<a class="headerlink" href="#equation-881675ff-65a5-4d21-bf23-c2b907c0c555" title="Permalink to this equation">¶</a></span>\[\begin{equation}E=\frac{1}{2}\rho\int_{x_0}^{x_0+\lambda}\int_{-\infty}^0|\nabla\phi|^2\mathrm{d}z\mathrm{d}x+\int_{x_0}^{x_0+\lambda}\int_0^{\eta}\rho g z\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
+<p>Deduce that the average wave energy per unit length in the <span class="math notranslate nohighlight">\(x\)</span>-direction is <span class="math notranslate nohighlight">\(\bar{E}=\frac{1}{2}\rho g A^2\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is the amplitude of the free surface displacement.
+(b) From the linearised unsteady Bernoulli equation, the pressure perturbation caused by the presence of the waves is <span class="math notranslate nohighlight">\(p_1=-\rho \frac{\partial \phi}{\partial t}\)</span>. The rate at which those pressure perturbations do work on a unit element dy in the direction dx is given by <span class="math notranslate nohighlight">\(p_1\frac{\mathrm{d}x}{\mathrm{d}t}\mathrm{d}y\)</span>. Therefore, the average rate at which energy is transferred across a vertical section of the fluid is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-117e22d4-cc0f-472e-a24c-44ddc0903839">
+<span class="eqno">(10)<a class="headerlink" href="#equation-117e22d4-cc0f-472e-a24c-44ddc0903839" title="Permalink to this equation">¶</a></span>\[\begin{equation}\bar{P}=\frac{1}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} p_1 u\mathrm{d}z\mathrm{d}x=-\frac{\rho}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} \frac{\partial \phi}{\partial t}\frac{\partial \phi}{\partial x}\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
+<p>Calculate this integral, and show that <span class="math notranslate nohighlight">\(\bar{P}=\bar{E} c_g\)</span>, where <span class="math notranslate nohighlight">\(c_g\)</span> is the group velocity. The result implies that energy is transported at the group velocity.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -246,7 +450,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="fluids/mathideas1.html" title="next page"><span class="section-number">1. </span>Mathematical ideas</a>
+    <a class='right-next' id="next-link" href="fluids/mathideas.html" title="next page"><span class="section-number">1. </span>Mathematical background</a>
 
         </div>
         
