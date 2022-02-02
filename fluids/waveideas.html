@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group velocity &#8212; Fluids</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Fluids</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mathideas.html">
+   1. Mathematical background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualise.html">
+   2. Visualising fluid motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="helmholtz.html">
+   3. Divergence and vorticity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="potential.html">
+   4. The velocity potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conservation.html">
+   5. Conservation law derivations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="navstok.html">
+   6. Shear stress and viscosity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steadysoln.html">
+   7. Steady Euler solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bernoulli.html">
+   8. Bernoulli’s equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity.html">
+   9. Vorticity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rotfram.html">
+   10. Rotational reference frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ekman.html">
+   11. Geophysical phenomena
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waterwaves.html">
+   12. Water waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="soundwaves.html">
+   13. Sound waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="nondimensionalisation.html">
+   14. Non-dimensionalisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reynolds.html">
+   15. Reynolds number
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/fluids/waveideas.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ffluids/waveideas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="group-velocity">
+<h1>Group velocity<a class="headerlink" href="#group-velocity" title="Permalink to this headline">¶</a></h1>
+<p>A useful trigonometric identity</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e4da373c-935a-46f7-b0b4-5d7d089342f0">
+<span class="eqno">()<a class="headerlink" href="#equation-e4da373c-935a-46f7-b0b4-5d7d089342f0" title="Permalink to this equation">¶</a></span>\[\begin{align}\cos(\alpha)+\cos(\beta)&amp;=\cos\left(\frac{\alpha-\beta}{2}+\frac{\alpha+\beta}{2}\right)+\cos\left(\frac{\alpha-\beta}{2}-\frac{\alpha+\beta}{2}\right)\\&amp;=\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)-\sin\left(\frac{\alpha-\beta}{2}\right)\sin\left(\frac{\alpha+\beta}{2}\right)\\&amp;+\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)+\sin\left(\frac{\alpha-\beta}{2}\right)\sin\left(\frac{\alpha+\beta}{2}\right)\\&amp;=2\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)\end{align}\]</div>
+<p>Superposition of two harmonic waves
+For two harmonic waves with similar frequencies and wavenumbers:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-363fa02e-cf9c-4cb8-85a2-5993132a8f1e">
+<span class="eqno">()<a class="headerlink" href="#equation-363fa02e-cf9c-4cb8-85a2-5993132a8f1e" title="Permalink to this equation">¶</a></span>\[\begin{align}\phi(x,t)&amp;=A\cos(k_1 x-\omega_1 t)+A\cos(k_2x -\omega_2 t)\\&amp;=2A\cos\left(\frac{k_1-k_2}{2}x-\frac{\omega_1-\omega_2}{2}t\right)\cos\left(\frac{k_1+k_2}{2}x-\frac{\omega_1+\omega_2}{2}t\right)\end{align}\]</div>
+<p>The first cosine is called the “envelope wave”. It has a small frequency and wavenumber in comparison to the second cosine. It’s velocity, called the group velocity is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0df60293-4048-4ea7-9fbb-8ed2a885f3e2">
+<span class="eqno">()<a class="headerlink" href="#equation-0df60293-4048-4ea7-9fbb-8ed2a885f3e2" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_g=\frac{\omega_1-\omega_2}{k_1-k_2}=\frac{\Delta\omega}{\Delta k}.\end{equation}\]</div>
+<p>The second cosine is called the “carrier wave”. It’s velocity called the phase velocity is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-069c5200-9e21-4eee-8aff-b3190cfc6727">
+<span class="eqno">()<a class="headerlink" href="#equation-069c5200-9e21-4eee-8aff-b3190cfc6727" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_p=\frac{\omega_1+\omega_2}{k_1+k_2}.\end{equation}\]</div>
+<p>In the following illustration, the envelope has a wavelength ten times that of the carrier wave, and a velocity twice that of the carrier wave. The wavetrain propagates to the right with amplitude modulation. The unmodulated carrier wave is shown in blue for comparison.</p>
+<p>Since the envelope wave here is travelling faster than the carrier wave, an observer would see waves appearing at the back of the wavetrain and disappearing at the front.</p>
+<a class="reference internal image-reference" href="../_images/train1.gif" id="a-wavetrain"><img alt="a wavetrain" class="align-center" id="a-wavetrain" src="../_images/train1.gif" style="width: 360.0px; height: 72.0px;" /></a>
+<p>In the following illustration, the velocity ratios and wavelengths are the same as in the previous example, but the direction of the carrier wave is opposite to the direction of the envelope wave.</p>
+<a class="reference internal image-reference" href="../_images/train2.gif" id="another-wavetrain"><img alt="another wavetrain" class="align-center" id="another-wavetrain" src="../_images/train2.gif" style="width: 360.0px; height: 72.0px;" /></a>
+<p>In the following example, the envelope wave travels at half the speed of the carrier wave. An observer would see waves appearing at the front of the wavetrain and disappearing at the back.</p>
+<a class="reference internal image-reference" href="../_images/train3.gif" id="yet-another-wavetrain"><img alt="yet another wavetrain" class="align-center" id="yet-another-wavetrain" src="../_images/train3.gif" style="width: 360.0px; height: 72.0px;" /></a>
+<p>Motion of a wave packet
+We now repeat the above analysis, but for a packet of waves, each having a different amplitude:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-34ab329f-a728-4164-bb19-c4d0f418c9f4">
+<span class="eqno">()<a class="headerlink" href="#equation-34ab329f-a728-4164-bb19-c4d0f418c9f4" title="Permalink to this equation">¶</a></span>\[\begin{equation}\phi(x,t)=\int_{-\infty}^{\infty}A(k)e^{i(kx-\omega(k)t)}\mathrm{d}k\end{equation}\]</div>
+<p>We will assume that the wavepacket is almost monochromatic, meaning closely centred around a single frequency. The amplitude function <span class="math notranslate nohighlight">\(A(k)\)</span> might be a sharply peaked Gaussian, for example. This allows the frequency to be linearised around the central frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-99a6373a-6352-4f05-8252-e163ed1c4739">
+<span class="eqno">()<a class="headerlink" href="#equation-99a6373a-6352-4f05-8252-e163ed1c4739" title="Permalink to this equation">¶</a></span>\[\begin{equation}\omega(k)\simeq \omega_0+(k-k_0)c_{g0}, \qquad c_{g0}=\frac{\mathrm{d}\omega}{\mathrm{d}k}\biggr|_{k=k_0}\end{equation}\]</div>
+<p>This allows the wavepacket to be rewritten in linearised form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-814bcf7b-a245-44f8-9c91-ab108951b9f6">
+<span class="eqno">()<a class="headerlink" href="#equation-814bcf7b-a245-44f8-9c91-ab108951b9f6" title="Permalink to this equation">¶</a></span>\[\begin{equation}\phi(x,t)=e^{i(k_0 x-\omega t)}\int_{-\infty}^{\infty}A(k)e^{i(k-k_0)(x-c_{g0}t)}\mathrm{d}k.\end{equation}\]</div>
+<p>Again, we see that the result consists of a monochromatic “carrier wave”, that travels with velocity <span class="math notranslate nohighlight">\(c_{p0}\)</span> and an envelope that travels with velocity <span class="math notranslate nohighlight">\(c_{g0}\)</span>, where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9db14d3a-9b19-498e-932b-2f71307e13d9">
+<span class="eqno">()<a class="headerlink" href="#equation-9db14d3a-9b19-498e-932b-2f71307e13d9" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_{p0}=\frac{\omega_0}{k_0}, \qquad  c_{g0}=\frac{\mathrm{d}\omega}{\mathrm{d}k}\biggr|_{k=k_0}.\end{equation}\]</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./fluids"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ella Metcalfe<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

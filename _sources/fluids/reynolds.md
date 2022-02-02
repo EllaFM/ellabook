@@ -3,95 +3,7 @@
 Big idea: Characterising viscous and inertial effects
 The Reynolds number gives a rough indication of the relative importance of inertial and viscous effects, and a way to easily make comparisons between experiments that use different fluids (viscosities) or differently sized apparatus. High and low Reynolds number flows are found to have quite different general characteristics, which can be investigated by scaling arguments in which the flow quantities are related to powers of the Reynolds number.
 
-* How are curl and div of velocity related to sliding and squashing?
-
-
-Non-dimensionalisation
-Consider the conservation of momentum equation we obtained previously, before non-dimensionalisation.
-
-\begin{equation}\frac{\partial\underline{v}}{\partial t}+\underline{v}.\nabla\underline{v}=-\frac{1}{\rho}\nabla p+\nu \Delta \underline{v}+\underline{F}.\end{equation}
-
-We may introduce non-dimensional variables using a characteristic length scale $L$, velocity $U$, time $T$, pressure $P$ and body force $g$:
-
-\begin{equation}\underline{x}_*=\frac{\underline{x}}{L}, \quad \underline{v}_*=\frac{\underline{v}}{U}, \quad t_*=\frac{t}{T}, \quad p_*=\frac{p}{P}, \quad \underline{F}^*=\frac{\underline{F}}{g}\end{equation}
-
-Making these substitutions gives:
-
-\begin{equation}\frac{L}{TU}\frac{\partial\underline{v}_*}{\partial t_*}+\underline{v_*}.\nabla_* \underline{v_*}=-\frac{P}{\rho U^2}\nabla p_* + \frac{\nu}{U L} \Delta_*\underline{v_*}+\frac{gL}{U^2}\underline{F}_*,\end{equation}
-
-The following dimensionless parameters now appear in the normalized momentum equation:
-
-
-
-$\mathrm{St}=\frac{L}{TU}$
-
-
-
-
-
-Strouhal number
-
-
-
-
-
-$~\frac{\text{local accelaration}}{\text{convective acceleration}}$
-
-
-
-
-
-$\mathrm{Re}=\frac{UL}{\nu}$
-
-
-
-
-
-Reynolds number
-
-
-
-
-
-$~\frac{\text{inertia}}{\text{viscous effects}}$
-
-
-
-
-
-$\mathrm{Fr}=\frac{U^2}{gL}$
-
-
-
-
-
-Froude number
-
-
-
-
-
-$~\frac{\text{inertia}}{\text{body force}}$
-
-
-
-
-
-If any of these quantities is large/small then we may construct an approximate solution by neglecting relevant terms in the equation. In the Navier Stokes equations presented in the previous chapter, the body force was neglected and it was assumed that the scales of local acceleration, inertia and pressure are comparable so that the following non-dimensionalisations of time and velocity are sensible:
-
-\begin{equation}p=\frac{p_*}{\rho U^2}, \quad t=\frac{U t*}{L}.\end{equation}
-
-We obtain the equation given previously. The asterisks can dropped, because from now on we will always work with dimensionless quantities:
-
-\begin{equation}\frac{\partial\underline{v}}{\partial t}+\underline{v}.\nabla \underline{v}=-\nabla p + \mathrm{Re}^{-1} \Delta\underline{v}\end{equation}
-
-The choice of characteristic length and velocity scales is somewhat arbitrary, but should be done to ensure that the physical quantities are $\mathcal{O}(1)$ or smaller. The characteristic length scale should be chosen as a typical distance over which the fluid velocity changes by an amount of order $U$.
-
-Defining a characteristic length scale is not always easy, though fortunately practices have been established (at least for classical geometries) through years of study and enhanced understanding about flows. For instance, in the case of developed fluid flow through a pipe or channel the relevant characteristic length scale is the diameter of the enclosure. For unconfined flows, such as the flow of oncoming fluid over a flat plate it is more challenging to define a suitable length scale. We may, in that case, define the Reynolds number based on some fixed downstream reference distance from the leading edge of the plate that is applicable to the region of interest.
-
-
-
-Why we introduce the Reynolds number
+## Why we introduce the Reynolds number
 
 
 1. To simplify comparison between experiments:
@@ -120,8 +32,8 @@ Now suppose that we wish to repeat the experiment with the walls moved further a
 
 To see why the Reynolds number is important, notice that in the dimensional form of the equations we have
 
-inertial term: $\underline{v}.\nabla\underline{v} =\mathcal{O}(U^2/L)$
-viscous term: $\nu\Delta\underline{v} =\mathcal{O}(\nu U/L^2)$
+inertial term: $\underline{u}.\nabla\underline{u} =\mathcal{O}(U^2/L)$
+viscous term: $\nu\Delta\underline{u} =\mathcal{O}(\nu U/L^2)$
 So the ratio of inertial$/$viscous terms is $\mathcal{O}\left(\frac{U^2/L}{\nu U/L^2}\right)=\mathcal{O}(\mathrm{Re})$.
 
 The Reynolds number therefore gives a rough indication of the relative importance of inertial and viscous effects. At low Reynolds numbers ($\mathrm{Re}\ll 1)$ the effects of viscosity appear to be very important whilst at high Reynolds numbers ($\mathrm{Re\gg 1}$) the effects of inertia appear to dominate.
@@ -131,13 +43,13 @@ See also: https://ed.ted.com/lessons/human-sperm-vs-the-sperm-whale-aatish-bhati
 
 
 Example: Low Reynolds number flow
-If the Reynolds number is very small (e.g. for very viscous flows) then we can neglect the inertial terms $\underline{v}.\nabla\underline{v}$ to leave
+If the Reynolds number is very small (e.g. for very viscous flows) then we can neglect the inertial terms $\underline{u}.\nabla\underline{u}$ to leave
 
-\begin{equation}\frac{\partial\underline{v}}{\partial t}=-\frac{1}{\rho}\nabla p+\nu \Delta \underline{v}+\underline{F}.\end{equation}
+\begin{equation}\frac{\partial\underline{u}}{\partial t}=-\frac{1}{\rho}\nabla p+\nu \Delta \underline{u}+\underline{F}.\end{equation}
 
 If we are interested in steady solutions in the absence of a body force, the system reduces to the equation for Stokes flow (creeping flow):
 
-\begin{equation}\mu \Delta \underline{v}-\nabla p=\underline{0}, \quad \nabla.\underline{v}=0.\end{equation}
+\begin{equation}\mu \Delta \underline{u}-\nabla p=\underline{0}, \quad \nabla.\underline{u}=0.\end{equation}
 
 The flow governed by this pair of equations exhibits the fascinating property of reversibility. If the boundary conditions conditions applied to the fluid are reversed, the fluid particles will return back along their previous paths. A striking demonstration of this phenomenon can be found here:
 
@@ -162,7 +74,7 @@ It is based on the idea of starting with the full non-dimensional Navier stokes 
 
 
 High Reynolds number flow
-In the case of High Reynolds number flow it is the viscous effects that appear to be small. Neglecting the viscous terms $\nu\Delta \underline{v}$  results in the Euler's equations of fluid dynamics, which we will examine in the next chapter. Again, however, we need to be extremely careful.
+In the case of High Reynolds number flow it is the viscous effects that appear to be small. Neglecting the viscous terms $\nu\Delta \underline{u}$  results in the Euler's equations of fluid dynamics, which we will examine in the next chapter. Again, however, we need to be extremely careful.
 
 Let us return to the idea of a cylinder placed into an oncoming flow- this time at high speed. Early experimenters and mathematicians did not have the techniques of high speed photography available to them, and there was disagreement about what happens at the fluid boundary. Many believed that fluid particles would "stick" to the boundary and transfer momentum, whilst others believed that the flow would move smoothly past the boundary.
 
@@ -203,7 +115,7 @@ The pipe flow experiment shown in the video is a classic, which was studied by O
 
 The mathematical theory begins by first solving the equations of motion for steady flow in a pipe $U(r)$, where $r$ is the radial coordinate. The flow velocity is found to follow a parabolic flow profile. We will illustrate the mathematics later in this course, when we look at elementary viscous flows.
 
-It is then assumed that the steady flow is subjected to some small amplitude disturbances (perturbations) in the manner \begin{equation}\underline{v}=(U(y),0,0)+\epsilon\hat{\underline{v}},\end{equation} where $\epsilon$ is a small parameter and $\hat{\underline{v}}$ are motions of the sort you considered when you solved the wave equation. These additional terms represent tiny background fluid motions such as vibrations, or disturbances created at the point where dye is injected into the flow or where the fluid enters the pipe.
+It is then assumed that the steady flow is subjected to some small amplitude disturbances (perturbations) in the manner \begin{equation}\underline{u}=(U(y),0,0)+\epsilon\hat{\underline{u}},\end{equation} where $\epsilon$ is a small parameter and $\hat{\underline{u}}$ are motions of the sort you considered when you solved the wave equation. These additional terms represent tiny background fluid motions such as vibrations, or disturbances created at the point where dye is injected into the flow or where the fluid enters the pipe.
 
 We solve the equations of motion for the combined motion and determine what happens to the amplitude of the waves. This is called a perturbation theory. We want to establish if the perturbations are amplified or damped, with assumption that amplified perturbations will eventually become large enough to trigger a nonlinear cascade (instability).
 
