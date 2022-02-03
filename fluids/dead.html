@@ -286,27 +286,27 @@
 <div class="section" id="example-archimides-principle">
 <h2>Example: Archimides’ Principle<a class="headerlink" href="#example-archimides-principle" title="Permalink to this headline">¶</a></h2>
 <p>If we take the body force to be gravity, <span class="math notranslate nohighlight">\(\underline{g}=(0,0,-g)\)</span> and we assume that the fluid is at rest so that <span class="math notranslate nohighlight">\(\underline{u}=\underline{0}\)</span> then from the conservation of momentum equation <code class="xref eq docutils literal notranslate"><span class="pre">consofmom5</span></code> we obtain a result for the hydrostatic pressure :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abc56ece-eeb4-46d2-9232-80fe3f0e0023">
-<span class="eqno">()<a class="headerlink" href="#equation-abc56ece-eeb4-46d2-9232-80fe3f0e0023" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla p =(0,0,-g\rho)\quad \Rightarrow p=K-\rho g z,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-77b6411d-2dea-4bb2-b305-52cc1404b452">
+<span class="eqno">()<a class="headerlink" href="#equation-77b6411d-2dea-4bb2-b305-52cc1404b452" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla p =(0,0,-g\rho)\quad \Rightarrow p=K-\rho g z,\end{equation}\]</div>
 <p>where the constant <span class="math notranslate nohighlight">\(K\)</span> is the pressure at <span class="math notranslate nohighlight">\(z=0\)</span>.
 We now calculate the force due to hydrostatic pressure on a body immersed within the fluid:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3e34bac-3dd3-493f-b319-83f2dc778869">
-<span class="eqno">()<a class="headerlink" href="#equation-d3e34bac-3dd3-493f-b319-83f2dc778869" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F}=-\int_S p\ \underline{\mathrm{d}S} = - \int_V (\nabla{p}) dV\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a239c187-58d7-4647-a3ea-c4002ab1b8a0">
+<span class="eqno">()<a class="headerlink" href="#equation-a239c187-58d7-4647-a3ea-c4002ab1b8a0" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F}=-\int_S p\ \underline{\mathrm{d}S} = - \int_V (\nabla{p}) dV\end{equation}\]</div>
 <p>Here, the minus sign is because the pressure acts inwards on the surface, in the opposite direction to the definition of the normal <span class="math notranslate nohighlight">\(\underline{\mathrm{d}S}.\)</span> The rewriting of the surface integral as a volume integral is a consequence of one of the many corollaries of the divergence theorem.
 From the result <span class="math notranslate nohighlight">\(\nabla p =(0,0,-g\rho)\)</span> we then obtain</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c7946d1-4bc7-4c98-a377-76dddfba77a7">
-<span class="eqno">()<a class="headerlink" href="#equation-4c7946d1-4bc7-4c98-a377-76dddfba77a7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F} = \underline{g}\int_V\rho dV\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-bbf55425-0c35-4648-9e3f-278d4cd23ff0">
+<span class="eqno">()<a class="headerlink" href="#equation-bbf55425-0c35-4648-9e3f-278d4cd23ff0" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F} = \underline{g}\int_V\rho dV\end{equation}\]</div>
 <p>This tells us that there is an upward force on the body which is equal in magnitude to the weight of water displaced.</p>
 </div>
 <div class="section" id="dead-almost-uniform-rotation">
 <h2>Dead: Almost uniform rotation<a class="headerlink" href="#dead-almost-uniform-rotation" title="Permalink to this headline">¶</a></h2>
 <p>In <a class="reference internal" href="rotfram.html#rotfram-navstok"><span class="std std-numref">Section 10.3</span></a>, the Navier-Stokes equations were presented relative to a rotating frame of reference. We will consider the case of a body of fluid that undergoes weak motion relative to a frame rotating at constant angular velocity <span class="math notranslate nohighlight">\(\underline{\Omega}.\)</span></p>
 <p>Taking <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(L\)</span> to be characteristic length and velocity scales of the motion allows us to compare the size of the inertial term relative to the Coriolis term:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e6af150-bd59-4506-b464-b493c7daea3a">
-<span class="eqno">()<a class="headerlink" href="#equation-3e6af150-bd59-4506-b464-b493c7daea3a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{|\underline{u}.\nabla\underline{u}|}{|\underline{\Omega}\times\underline{u}|}\sim \frac{U^2/L}{\Omega U} = \frac{U}{L\Omega}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1ecf439a-50ca-47cd-9524-97f04d747270">
+<span class="eqno">()<a class="headerlink" href="#equation-1ecf439a-50ca-47cd-9524-97f04d747270" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{|\underline{u}.\nabla\underline{u}|}{|\underline{\Omega}\times\underline{u}|}\sim \frac{U^2/L}{\Omega U} = \frac{U}{L\Omega}.\end{equation}\]</div>
 <p>If this ratio is much smaller than one then the inertial term can be neglected to a first approximation. We will also suppose that viscous effects may be neglected in the interior of the fluid (i.e. away from any boundaries). The equations of motion then simplify to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2742bb1-bfe8-492d-9c69-8074dbb19eb3">
-<span class="eqno">()<a class="headerlink" href="#equation-a2742bb1-bfe8-492d-9c69-8074dbb19eb3" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial \underline{u}}{\partial t}+2(\underline{\Omega}\times\underline{u})&amp;=-\frac{1}{\rho}\nabla p_R,\\
+<div class="amsmath math notranslate nohighlight" id="equation-dfe32eaf-62ab-4a19-9f5f-dc95867969e0">
+<span class="eqno">()<a class="headerlink" href="#equation-dfe32eaf-62ab-4a19-9f5f-dc95867969e0" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial \underline{u}}{\partial t}+2(\underline{\Omega}\times\underline{u})&amp;=-\frac{1}{\rho}\nabla p_R,\\
 \nabla.\underline{u}&amp;=0,\end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_R\)</span> denotes the reduced pressure.</p>
 <p>Taking the angular velocity to be <span class="math notranslate nohighlight">\(\underline{\Omega}=(0,0,\Omega)\)</span> and denoting the velocity by <span class="math notranslate nohighlight">\(\underline{u}=(u,v,w)\)</span> gives the following scalar (component) form:</p>
@@ -325,21 +325,21 @@ From the result <span class="math notranslate nohighlight">\(\nabla p =(0,0,-g\r
 \[\begin{equation*}\frac{\partial}{\partial t}\left(\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)+2\Omega\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right)=0.
 \end{equation*}\]</div>
 <p>The first term  in this is the time derivative of the vorticity, and the second term can be simplified using the mass equation to finally obtain</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5cf7e25b-cbde-47ec-9a14-e6c5b8f6c1a9">
-<span class="eqno">()<a class="headerlink" href="#equation-5cf7e25b-cbde-47ec-9a14-e6c5b8f6c1a9" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \omega}{\partial t}=2\Omega \frac{\partial w}{\partial z}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ea4c1aa0-7482-4e8d-afe1-fe92709fd847">
+<span class="eqno">()<a class="headerlink" href="#equation-ea4c1aa0-7482-4e8d-afe1-fe92709fd847" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \omega}{\partial t}=2\Omega \frac{\partial w}{\partial z}\end{equation}\]</div>
 </div>
 <div class="section" id="more-dead">
 <h2>More dead<a class="headerlink" href="#more-dead" title="Permalink to this headline">¶</a></h2>
 <p>The result given in <a class="reference internal" href="bernoulli.html#bucket-exercise"><span class="std std-numref">Exercise 8.3</span></a> can be rearranged to obtain an expression for the pressure at each point in the fluid:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9f2fb25a-6b1f-459a-be04-3026f76e9b34">
-<span class="eqno">()<a class="headerlink" href="#equation-9f2fb25a-6b1f-459a-be04-3026f76e9b34" title="Permalink to this equation">¶</a></span>\[\begin{equation}p=p_0+\rho g z - \frac{\rho \omega^2}{2}r^2, \qquad r^2=x^2+y^2\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-693031fd-9cc0-4765-8266-f0cce56b4b87">
+<span class="eqno">()<a class="headerlink" href="#equation-693031fd-9cc0-4765-8266-f0cce56b4b87" title="Permalink to this equation">¶</a></span>\[\begin{equation}p=p_0+\rho g z - \frac{\rho \omega^2}{2}r^2, \qquad r^2=x^2+y^2\end{equation}\]</div>
 <p>The radial pressure gradient is found to be <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial r}=\rho\omega^2 r\)</span>, which varies linearly towards the centre. This pressure gradient balances the centrifugal acceleration so that the streamlines remain circular.</p>
 </div>
 <div class="section" id="shallow-water-results">
 <h2>Shallow water results<a class="headerlink" href="#shallow-water-results" title="Permalink to this headline">¶</a></h2>
 <p>The shallow water dispersion relation is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6369b585-146e-4ba5-a990-e104a46e1763">
-<span class="eqno">()<a class="headerlink" href="#equation-6369b585-146e-4ba5-a990-e104a46e1763" title="Permalink to this equation">¶</a></span>\[\begin{equation}c^2=gh\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-925c760f-8c35-4af1-9a60-2078dd2cf58c">
+<span class="eqno">()<a class="headerlink" href="#equation-925c760f-8c35-4af1-9a60-2078dd2cf58c" title="Permalink to this equation">¶</a></span>\[\begin{equation}c^2=gh\end{equation}\]</div>
 <p>The result implies that the peak of a wave will travel faster than the base of the wave, which leads to steepening of the wave profile and ultimately wave breaking, which occurs near to the shoreline. Notice that in shallow water the result for the phase-velocity does not depend on the wavelength. Shallow-water gravity waves are non-dispersive.</p>
 </div>
 <div class="section" id="exercises">
@@ -348,12 +348,12 @@ From the result <span class="math notranslate nohighlight">\(\nabla p =(0,0,-g\r
 <li><p>For deep water waves:
 (a) Calculate the total energy (per unit length in the <span class="math notranslate nohighlight">\(y\)</span>-direction) in one wavelength:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-88f8b5f4-5994-49b4-8fdf-fbba0336e6e2">
-<span class="eqno">()<a class="headerlink" href="#equation-88f8b5f4-5994-49b4-8fdf-fbba0336e6e2" title="Permalink to this equation">¶</a></span>\[\begin{equation}E=\frac{1}{2}\rho\int_{x_0}^{x_0+\lambda}\int_{-\infty}^0|\nabla\phi|^2\mathrm{d}z\mathrm{d}x+\int_{x_0}^{x_0+\lambda}\int_0^{\eta}\rho g z\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-62237420-2352-440c-991f-e6bd5ca7a0b0">
+<span class="eqno">()<a class="headerlink" href="#equation-62237420-2352-440c-991f-e6bd5ca7a0b0" title="Permalink to this equation">¶</a></span>\[\begin{equation}E=\frac{1}{2}\rho\int_{x_0}^{x_0+\lambda}\int_{-\infty}^0|\nabla\phi|^2\mathrm{d}z\mathrm{d}x+\int_{x_0}^{x_0+\lambda}\int_0^{\eta}\rho g z\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
 <p>Deduce that the average wave energy per unit length in the <span class="math notranslate nohighlight">\(x\)</span>-direction is <span class="math notranslate nohighlight">\(\bar{E}=\frac{1}{2}\rho g A^2\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is the amplitude of the free surface displacement.
 (b) From the linearised unsteady Bernoulli equation, the pressure perturbation caused by the presence of the waves is <span class="math notranslate nohighlight">\(p_1=-\rho \frac{\partial \phi}{\partial t}\)</span>. The rate at which those pressure perturbations do work on a unit element dy in the direction dx is given by <span class="math notranslate nohighlight">\(p_1\frac{\mathrm{d}x}{\mathrm{d}t}\mathrm{d}y\)</span>. Therefore, the average rate at which energy is transferred across a vertical section of the fluid is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d444dd64-4a79-425e-be76-40d75745e246">
-<span class="eqno">()<a class="headerlink" href="#equation-d444dd64-4a79-425e-be76-40d75745e246" title="Permalink to this equation">¶</a></span>\[\begin{equation}\bar{P}=\frac{1}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} p_1 u\mathrm{d}z\mathrm{d}x=-\frac{\rho}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} \frac{\partial \phi}{\partial t}\frac{\partial \phi}{\partial x}\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-810983ec-d923-4da4-93de-1834393ce791">
+<span class="eqno">()<a class="headerlink" href="#equation-810983ec-d923-4da4-93de-1834393ce791" title="Permalink to this equation">¶</a></span>\[\begin{equation}\bar{P}=\frac{1}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} p_1 u\mathrm{d}z\mathrm{d}x=-\frac{\rho}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} \frac{\partial \phi}{\partial t}\frac{\partial \phi}{\partial x}\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
 <p>Calculate this integral, and show that <span class="math notranslate nohighlight">\(\bar{P}=\bar{E} c_g\)</span>, where <span class="math notranslate nohighlight">\(c_g\)</span> is the group velocity. The result implies that energy is transported at the group velocity.</p>
 </div>
 </div>

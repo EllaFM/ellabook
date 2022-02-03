@@ -341,11 +341,11 @@
 </div>
 </div>
 <p>Result (1) is immediately obtained from (3) by taking the curl and using the result “curl grad=0” :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eda3ffc3-5ac5-48a1-9495-390029b3a9c8">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-eda3ffc3-5ac5-48a1-9495-390029b3a9c8" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u}=\nabla\phi \quad \Rightarrow \quad \nabla\times\underline{u}=\nabla\times(\nabla \phi)=\underline{0}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-03e150df-e44d-4850-a336-9873ffaa68c6">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-03e150df-e44d-4850-a336-9873ffaa68c6" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u}=\nabla\phi \quad \Rightarrow \quad \nabla\times\underline{u}=\nabla\times(\nabla \phi)=\underline{0}\end{equation}\]</div>
 <p>Result (2) can be obtained from (1) by appealing to Stokes’ theorem for a surface <span class="math notranslate nohighlight">\(A\)</span> bounded by <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe1b4b87-dcb5-4ca2-94d7-8043fa843c4f">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-fe1b4b87-dcb5-4ca2-94d7-8043fa843c4f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6280374a-da83-4ad6-af86-4f2cf025c15b">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-6280374a-da83-4ad6-af86-4f2cf025c15b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \oint_{\mathcal{C}}\underline{F}.\mathrm{d}\underline{s} = \iint_A (\nabla \times \underline{F}).\mathrm{d}\underline{A} =0
 \end{equation}\]</div>
 <div class="admonition warning">
@@ -357,22 +357,22 @@
 <div class="section" id="calculating-the-velocity-potential">
 <h2><span class="section-number">4.2. </span>Calculating the velocity potential<a class="headerlink" href="#calculating-the-velocity-potential" title="Permalink to this headline">¶</a></h2>
 <p>To calculate a velocity potential <span class="math notranslate nohighlight">\(\phi\)</span> for an irrotational flow, we need to solve the antiderivative problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-570488f4-2b90-45bd-b696-6096f408cf65">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-570488f4-2b90-45bd-b696-6096f408cf65" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u} = \nabla\phi\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-378e64b3-eb0c-43c6-b511-72671b62c6df">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-378e64b3-eb0c-43c6-b511-72671b62c6df" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u} = \nabla\phi\end{equation}\]</div>
 <p><strong>Example 1 : Constant velocity parallel to an axis</strong></p>
 <p><span class="math notranslate nohighlight">\(\underline{u}=(U,0,0)\)</span> is irrotational. It has velocity potential <span class="math notranslate nohighlight">\(\phi=Ux\)</span>, since</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e32efd84-43a8-4d53-a8e2-078a782774c0">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-e32efd84-43a8-4d53-a8e2-078a782774c0" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \phi}{\partial x}=U,\quad \frac{\partial \phi}{\partial y}=0, \quad \frac{\partial \phi}{\partial z}=0.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0f7d49c5-8112-4941-91b9-a3684a00540a">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-0f7d49c5-8112-4941-91b9-a3684a00540a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \phi}{\partial x}=U,\quad \frac{\partial \phi}{\partial y}=0, \quad \frac{\partial \phi}{\partial z}=0.\end{equation}\]</div>
 <p><strong>Example 2: Stagnation point flow</strong></p>
 <p><span class="math notranslate nohighlight">\(\underline{u}=(\alpha x,-\alpha y,0)\)</span> is irrotational. It has velocity potential <span class="math notranslate nohighlight">\(\phi=\frac{1}{2}\alpha(x^2-y^2)\)</span>, since</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd471822-371a-41e3-b04b-9334c6ddadee">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-bd471822-371a-41e3-b04b-9334c6ddadee" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \phi}{\partial x}=\alpha x,\quad \frac{\partial \phi}{\partial y}=-\alpha t, \quad \frac{\partial \phi}{\partial z}=0.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d9a50714-3e65-4b57-9d67-fb4c53e72ede">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-d9a50714-3e65-4b57-9d67-fb4c53e72ede" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \phi}{\partial x}=\alpha x,\quad \frac{\partial \phi}{\partial y}=-\alpha t, \quad \frac{\partial \phi}{\partial z}=0.\end{equation}\]</div>
 </div>
 <div class="section" id="line-integrals-for-irrotational-flows">
 <h2><span class="section-number">4.3. </span>Line integrals for irrotational flows<a class="headerlink" href="#line-integrals-for-irrotational-flows" title="Permalink to this headline">¶</a></h2>
 <p>The line integral for an irrotational flow is independent of the path. The result can be obtained from a vector potential:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f9b2070-d0c8-4bf6-91db-fff3324b34b1">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-0f9b2070-d0c8-4bf6-91db-fff3324b34b1" title="Permalink to this equation">¶</a></span>\[\begin{equation}\int_{\mathcal{C}}\underline{u}.\mathrm{d}\underline{s}=\int_{\underline{x}_0}^{\underline{x}_1}\nabla\phi.\mathrm{d}\underline{s} = \phi(\underline{x}_1)-\phi(\underline{x}_0) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3ea83723-737d-4405-bb73-7ec9b53f85d5">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-3ea83723-737d-4405-bb73-7ec9b53f85d5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\int_{\mathcal{C}}\underline{u}.\mathrm{d}\underline{s}=\int_{\underline{x}_0}^{\underline{x}_1}\nabla\phi.\mathrm{d}\underline{s} = \phi(\underline{x}_1)-\phi(\underline{x}_0) \end{equation}\]</div>
 <div class="exercise admonition" id="ex-112">
 <p class="admonition-title"><span class="caption-number">Exercise 4.1 </span> </p>
 <div class="section" id="exercise-content">
@@ -439,11 +439,11 @@ Hence, $\displaystyle \int_{(1,2,1)}^{(3,2,1)}\underline{u}.\mathrm{d}\underline
 <p><strong>Example 4: Line vortex flow (a special example)</strong></p>
 <p>Line vortex flow <span class="math notranslate nohighlight">\(\underline{u}=\frac{k}{r}\underline{e}_{\theta}\)</span> is irrotational everywhere except at the origin, where it is not defined.
 If we consider only the region <span class="math notranslate nohighlight">\(r\geq a\)</span> then we have a potential flow:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab2a7adc-5bf3-4617-a9fd-90d64673c1b2">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-ab2a7adc-5bf3-4617-a9fd-90d64673c1b2" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \phi}{\partial r}=0, \quad \frac{1}{r}\frac{\partial \phi}{\partial \theta}=\frac{k}{r}, \quad \frac{\partial \phi}{\partial z} \qquad \Rightarrow \quad \phi=k\theta.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-06f4101a-5743-42c0-b1e2-bd2ea84278ae">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-06f4101a-5743-42c0-b1e2-bd2ea84278ae" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \phi}{\partial r}=0, \quad \frac{1}{r}\frac{\partial \phi}{\partial \theta}=\frac{k}{r}, \quad \frac{\partial \phi}{\partial z} \qquad \Rightarrow \quad \phi=k\theta.\end{equation}\]</div>
 <p>We have a field that is irrotational on <span class="math notranslate nohighlight">\(r\geq a\)</span>, but it is not conservative. If we calculate the circulation around a closed circuit <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> then we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c4df6bb-cfd0-4dc4-ae0c-9ce89f65206e">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-0c4df6bb-cfd0-4dc4-ae0c-9ce89f65206e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\Gamma=\int_{\mathcal{C}}(\nabla\phi).d\underline{x}= \int_{\mathcal{C}}\frac{k}{r}r\mathrm{d}\theta = \biggr[k\theta\biggr]_{\mathcal{C}}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f2686730-58fe-4d82-affe-7a63994c18dc">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-f2686730-58fe-4d82-affe-7a63994c18dc" title="Permalink to this equation">¶</a></span>\[\begin{equation}\Gamma=\int_{\mathcal{C}}(\nabla\phi).d\underline{x}= \int_{\mathcal{C}}\frac{k}{r}r\mathrm{d}\theta = \biggr[k\theta\biggr]_{\mathcal{C}}\end{equation}\]</div>
 <p>As we go around any circuit that does not enclose <span class="math notranslate nohighlight">\(r=a\)</span> then <span class="math notranslate nohighlight">\(\theta\)</span> and hence <span class="math notranslate nohighlight">\(\phi\)</span> will return to its original value, so the path integral is zero. However, any closed curve that winds round the origin will have circulation <span class="math notranslate nohighlight">\(\Gamma=2\pi k\)</span>. An illustration is provided below. In the first image, the circulation indicated is 0. In the second image, the circulation is <span class="math notranslate nohighlight">\(2\pi k\)</span> and in the third image the circulation is <span class="math notranslate nohighlight">\(4\pi k\)</span>.</p>
 <br>
 <a class="reference internal image-reference" href="../_images/circulation.png" id="circulation"><img alt="circulation diagrams" class="align-center" id="circulation" src="../_images/circulation.png" style="width: 720.0px; height: 180.0px;" /></a>
@@ -457,13 +457,13 @@ If we consider only the region <span class="math notranslate nohighlight">\(r\ge
 \underline{u}=\nabla\phi.
 \end{equation*}\]</div>
 <p>In the case where the flow is also solenoidal, meaning that <span class="math notranslate nohighlight">\(\nabla.\underline{u}=0\)</span>, then it is Laplacian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53cb4ab7-8abb-494c-8ce6-24bd53e5348c">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-53cb4ab7-8abb-494c-8ce6-24bd53e5348c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-45414ade-e4ba-445f-8330-084eac338853">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-45414ade-e4ba-445f-8330-084eac338853" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \nabla.(\nabla\phi)=0 \quad \Rightarrow \quad \nabla^2\phi=0.
 \end{equation}\]</div>
 <p>Written out in component form, the equation for solenoidal potential flow is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21e5ac4e-52b0-424c-b9fd-57033952d23b">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-21e5ac4e-52b0-424c-b9fd-57033952d23b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2250ede9-7a27-44a2-9503-e647d1dcbecd">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-2250ede9-7a27-44a2-9503-e647d1dcbecd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}+\frac{\partial^2\phi}{\partial z^2}=0.
 \end{equation}\]</div>
 <p>You may recognise this equation as it appears in many other steady state (time-independent) physical contexts including electrostatics, heat conduction and gravitation. It can be quite exciting to recognise that results derived from the heat equation can be applied to the problem of irrotational fluids.</p>
