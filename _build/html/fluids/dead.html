@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dead &#8212; Fluids</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Fluids</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mathideas.html">
+   1. Mathematical background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualise.html">
+   2. Visualising fluid motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="helmholtz.html">
+   3. Divergence and vorticity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="potential.html">
+   4. The velocity potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conservation.html">
+   5. Conservation law derivations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="navstok.html">
+   6. Shear stress and viscosity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steadysoln.html">
+   7. Steady Euler solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bernoulli.html">
+   8. Bernoulli’s equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity.html">
+   9. Vortex transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rotfram.html">
+   10. Rotational reference frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ekman.html">
+   11. Geophysical phenomena
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waterwaves.html">
+   12. Unsteady: Water waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="soundwaves.html">
+   13. Unsteady: Sound waves
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/fluids/dead.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ffluids/dead.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-archimides-principle">
+   Example: Archimides’ Principle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dead-almost-uniform-rotation">
+   Dead: Almost uniform rotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-dead">
+   More dead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shallow-water-results">
+   Shallow water results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dead">
+<h1>dead<a class="headerlink" href="#dead" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example-archimides-principle">
+<h2>Example: Archimides’ Principle<a class="headerlink" href="#example-archimides-principle" title="Permalink to this headline">¶</a></h2>
+<p>If we take the body force to be gravity, <span class="math notranslate nohighlight">\(\underline{g}=(0,0,-g)\)</span> and we assume that the fluid is at rest so that <span class="math notranslate nohighlight">\(\underline{u}=\underline{0}\)</span> then from the conservation of momentum equation <code class="xref eq docutils literal notranslate"><span class="pre">consofmom5</span></code> we obtain a result for the hydrostatic pressure :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-abc56ece-eeb4-46d2-9232-80fe3f0e0023">
+<span class="eqno">()<a class="headerlink" href="#equation-abc56ece-eeb4-46d2-9232-80fe3f0e0023" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla p =(0,0,-g\rho)\quad \Rightarrow p=K-\rho g z,\end{equation}\]</div>
+<p>where the constant <span class="math notranslate nohighlight">\(K\)</span> is the pressure at <span class="math notranslate nohighlight">\(z=0\)</span>.
+We now calculate the force due to hydrostatic pressure on a body immersed within the fluid:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d3e34bac-3dd3-493f-b319-83f2dc778869">
+<span class="eqno">()<a class="headerlink" href="#equation-d3e34bac-3dd3-493f-b319-83f2dc778869" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F}=-\int_S p\ \underline{\mathrm{d}S} = - \int_V (\nabla{p}) dV\end{equation}\]</div>
+<p>Here, the minus sign is because the pressure acts inwards on the surface, in the opposite direction to the definition of the normal <span class="math notranslate nohighlight">\(\underline{\mathrm{d}S}.\)</span> The rewriting of the surface integral as a volume integral is a consequence of one of the many corollaries of the divergence theorem.
+From the result <span class="math notranslate nohighlight">\(\nabla p =(0,0,-g\rho)\)</span> we then obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4c7946d1-4bc7-4c98-a377-76dddfba77a7">
+<span class="eqno">()<a class="headerlink" href="#equation-4c7946d1-4bc7-4c98-a377-76dddfba77a7" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{F} = \underline{g}\int_V\rho dV\end{equation}\]</div>
+<p>This tells us that there is an upward force on the body which is equal in magnitude to the weight of water displaced.</p>
+</div>
+<div class="section" id="dead-almost-uniform-rotation">
+<h2>Dead: Almost uniform rotation<a class="headerlink" href="#dead-almost-uniform-rotation" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="rotfram.html#rotfram-navstok"><span class="std std-numref">Section 10.3</span></a>, the Navier-Stokes equations were presented relative to a rotating frame of reference. We will consider the case of a body of fluid that undergoes weak motion relative to a frame rotating at constant angular velocity <span class="math notranslate nohighlight">\(\underline{\Omega}.\)</span></p>
+<p>Taking <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(L\)</span> to be characteristic length and velocity scales of the motion allows us to compare the size of the inertial term relative to the Coriolis term:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3e6af150-bd59-4506-b464-b493c7daea3a">
+<span class="eqno">()<a class="headerlink" href="#equation-3e6af150-bd59-4506-b464-b493c7daea3a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{|\underline{u}.\nabla\underline{u}|}{|\underline{\Omega}\times\underline{u}|}\sim \frac{U^2/L}{\Omega U} = \frac{U}{L\Omega}.\end{equation}\]</div>
+<p>If this ratio is much smaller than one then the inertial term can be neglected to a first approximation. We will also suppose that viscous effects may be neglected in the interior of the fluid (i.e. away from any boundaries). The equations of motion then simplify to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a2742bb1-bfe8-492d-9c69-8074dbb19eb3">
+<span class="eqno">()<a class="headerlink" href="#equation-a2742bb1-bfe8-492d-9c69-8074dbb19eb3" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial \underline{u}}{\partial t}+2(\underline{\Omega}\times\underline{u})&amp;=-\frac{1}{\rho}\nabla p_R,\\
+\nabla.\underline{u}&amp;=0,\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_R\)</span> denotes the reduced pressure.</p>
+<p>Taking the angular velocity to be <span class="math notranslate nohighlight">\(\underline{\Omega}=(0,0,\Omega)\)</span> and denoting the velocity by <span class="math notranslate nohighlight">\(\underline{u}=(u,v,w)\)</span> gives the following scalar (component) form:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\frac{\partial u}{\partial t} -2\Omega v= -\frac{1}{\rho}\frac{\partial p_R}{\partial x}, \qquad
+\frac{\partial v}{\partial t} +2\Omega u= -\frac{1}{\rho}\frac{\partial p_R}{\partial y}, \qquad
+\frac{\partial w}{\partial t} = -\frac{1}{\rho}\frac{\partial p_R}{\partial z},
+\end{equation*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z} =0
+\end{equation*}\]</div>
+<p>The pressure may be eliminated between the first two momentum equations by cross-differentiation to give:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\frac{\partial}{\partial t}\left(\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)+2\Omega\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right)=0.
+\end{equation*}\]</div>
+<p>The first term  in this is the time derivative of the vorticity, and the second term can be simplified using the mass equation to finally obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5cf7e25b-cbde-47ec-9a14-e6c5b8f6c1a9">
+<span class="eqno">()<a class="headerlink" href="#equation-5cf7e25b-cbde-47ec-9a14-e6c5b8f6c1a9" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \omega}{\partial t}=2\Omega \frac{\partial w}{\partial z}\end{equation}\]</div>
+</div>
+<div class="section" id="more-dead">
+<h2>More dead<a class="headerlink" href="#more-dead" title="Permalink to this headline">¶</a></h2>
+<p>The result given in <a class="reference internal" href="bernoulli.html#bucket-exercise"><span class="std std-numref">Exercise 8.3</span></a> can be rearranged to obtain an expression for the pressure at each point in the fluid:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9f2fb25a-6b1f-459a-be04-3026f76e9b34">
+<span class="eqno">()<a class="headerlink" href="#equation-9f2fb25a-6b1f-459a-be04-3026f76e9b34" title="Permalink to this equation">¶</a></span>\[\begin{equation}p=p_0+\rho g z - \frac{\rho \omega^2}{2}r^2, \qquad r^2=x^2+y^2\end{equation}\]</div>
+<p>The radial pressure gradient is found to be <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial r}=\rho\omega^2 r\)</span>, which varies linearly towards the centre. This pressure gradient balances the centrifugal acceleration so that the streamlines remain circular.</p>
+</div>
+<div class="section" id="shallow-water-results">
+<h2>Shallow water results<a class="headerlink" href="#shallow-water-results" title="Permalink to this headline">¶</a></h2>
+<p>The shallow water dispersion relation is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6369b585-146e-4ba5-a990-e104a46e1763">
+<span class="eqno">()<a class="headerlink" href="#equation-6369b585-146e-4ba5-a990-e104a46e1763" title="Permalink to this equation">¶</a></span>\[\begin{equation}c^2=gh\end{equation}\]</div>
+<p>The result implies that the peak of a wave will travel faster than the base of the wave, which leads to steepening of the wave profile and ultimately wave breaking, which occurs near to the shoreline. Notice that in shallow water the result for the phase-velocity does not depend on the wavelength. Shallow-water gravity waves are non-dispersive.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>For deep water waves:
+(a) Calculate the total energy (per unit length in the <span class="math notranslate nohighlight">\(y\)</span>-direction) in one wavelength:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-88f8b5f4-5994-49b4-8fdf-fbba0336e6e2">
+<span class="eqno">()<a class="headerlink" href="#equation-88f8b5f4-5994-49b4-8fdf-fbba0336e6e2" title="Permalink to this equation">¶</a></span>\[\begin{equation}E=\frac{1}{2}\rho\int_{x_0}^{x_0+\lambda}\int_{-\infty}^0|\nabla\phi|^2\mathrm{d}z\mathrm{d}x+\int_{x_0}^{x_0+\lambda}\int_0^{\eta}\rho g z\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
+<p>Deduce that the average wave energy per unit length in the <span class="math notranslate nohighlight">\(x\)</span>-direction is <span class="math notranslate nohighlight">\(\bar{E}=\frac{1}{2}\rho g A^2\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is the amplitude of the free surface displacement.
+(b) From the linearised unsteady Bernoulli equation, the pressure perturbation caused by the presence of the waves is <span class="math notranslate nohighlight">\(p_1=-\rho \frac{\partial \phi}{\partial t}\)</span>. The rate at which those pressure perturbations do work on a unit element dy in the direction dx is given by <span class="math notranslate nohighlight">\(p_1\frac{\mathrm{d}x}{\mathrm{d}t}\mathrm{d}y\)</span>. Therefore, the average rate at which energy is transferred across a vertical section of the fluid is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d444dd64-4a79-425e-be76-40d75745e246">
+<span class="eqno">()<a class="headerlink" href="#equation-d444dd64-4a79-425e-be76-40d75745e246" title="Permalink to this equation">¶</a></span>\[\begin{equation}\bar{P}=\frac{1}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} p_1 u\mathrm{d}z\mathrm{d}x=-\frac{\rho}{\lambda}\int_{x_0}^{x_0+\lambda}\int_{z=-\infty}^{z=0} \frac{\partial \phi}{\partial t}\frac{\partial \phi}{\partial x}\mathrm{d}z\mathrm{d}x.\end{equation}\]</div>
+<p>Calculate this integral, and show that <span class="math notranslate nohighlight">\(\bar{P}=\bar{E} c_g\)</span>, where <span class="math notranslate nohighlight">\(c_g\)</span> is the group velocity. The result implies that energy is transported at the group velocity.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./fluids"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ella Metcalfe<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

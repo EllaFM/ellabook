@@ -9,7 +9,7 @@
 In {numref}`dir-deriv` ({ref}`dir-deriv`) we found that the rate of change of a steady (time-independent) field $\phi(x,y,z)$ in a given direction $\underline{u}$ can be found by a scalar projection:
 
 ```{math}
-D_{v}\phi(\underline{x})=\underline{u}.\nabla\phi.
+D_{\underline{u}}\phi(\underline{x})=\underline{u}.\nabla\phi.
 ```
 Now, suppose that the background field is non-steady, so that $\phi=\phi(\underline{x},t)$. Proceeding as before by using the multi-variate chain rule, we immediately obtain
 
@@ -18,22 +18,6 @@ Now, suppose that the background field is non-steady, so that $\phi=\phi(\underl
 \frac{\mathrm{D}\phi}{\mathrm{D}t}=\frac{\partial \phi}{\partial t}+\underline{u}.\nabla\phi.
 ```
 This result is called the "material derivative" or "convective derivative", and the notation $\mathrm{D}/\mathrm{D}t$ is used in place of the ordinary derivative to signify its special significance. The first term accounts for the temporal evolution of the background field, and the second term (convection term) accounts for changes as a consequence of moving through the field with velocity $\underline{u}.$
-
-An illustration of the idea is shown below. In the example, a fluid particle follows a path marked in blue through a potential field $\phi$, the strength of which is indicated by the background colour scheme and equipotential contours. The arrows on the plot depict the instantaneous gradient field of $\phi$, which you may notice is perpendicular to the equipotential curves.
-
-At each point on the trajectory, the experienced change in $\phi$ is given as a sum of changes due to the evolution of time and position.
-
-<br>
-
-```{image} navstok_img/potentialfun.gif
----
-name: potential_fun
-alt: a particle moving through a potential field
-align: center
-scale: 80%
----
-```
-<br>
 
 The material derivative can also be applied to each element of a vector field $\underline{\phi}$, to give the change in $\underline{\phi}$ following the motion of a fluid particle. For example $\frac{\mathrm{D}\underline{u}}{\mathrm{D}t}$ gives the *convective acceleration*.
 

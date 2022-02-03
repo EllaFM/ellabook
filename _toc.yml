@@ -19,5 +19,5 @@ chapters:
 - file: fluids/ekman
 - file: fluids/waterwaves
 - file: fluids/soundwaves
-- file: fluids/nondimensionalisation
-- file: fluids/reynolds
+#- file: fluids/nondimensionalisation
+#- file: fluids/reynolds
