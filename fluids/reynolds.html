@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Reynolds number &#8212; Fluids</title>
+    <title>Reynolds number &#8212; Fluids</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,7 +56,6 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="14. Non-dimensionalisation" href="nondimensionalisation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,7 +92,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="mathideas.html">
    1. Mathematical background
@@ -157,16 +156,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="soundwaves.html">
    13. Unsteady: Sound waves
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="nondimensionalisation.html">
-   14. Non-dimensionalisation
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   15. Reynolds number
   </a>
  </li>
 </ul>
@@ -258,7 +247,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-we-introduce-the-reynolds-number">
-   15.1. Why we introduce the Reynolds number
+   Why we introduce the Reynolds number
   </a>
  </li>
 </ul>
@@ -273,12 +262,12 @@
               <div>
                 
   <div class="section" id="reynolds-number">
-<h1><span class="section-number">15. </span>Reynolds number<a class="headerlink" href="#reynolds-number" title="Permalink to this headline">¶</a></h1>
+<h1>Reynolds number<a class="headerlink" href="#reynolds-number" title="Permalink to this headline">¶</a></h1>
 <p>EARLY DRAFT: UNDER CONSTRUCTION</p>
 <p>Big idea: Characterising viscous and inertial effects
 The Reynolds number gives a rough indication of the relative importance of inertial and viscous effects, and a way to easily make comparisons between experiments that use different fluids (viscosities) or differently sized apparatus. High and low Reynolds number flows are found to have quite different general characteristics, which can be investigated by scaling arguments in which the flow quantities are related to powers of the Reynolds number.</p>
 <div class="section" id="why-we-introduce-the-reynolds-number">
-<h2><span class="section-number">15.1. </span>Why we introduce the Reynolds number<a class="headerlink" href="#why-we-introduce-the-reynolds-number" title="Permalink to this headline">¶</a></h2>
+<h2>Why we introduce the Reynolds number<a class="headerlink" href="#why-we-introduce-the-reynolds-number" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>To simplify comparison between experiments:</p></li>
 </ol>
@@ -298,11 +287,11 @@ So the ratio of inertial<span class="math notranslate nohighlight">\(/\)</span>v
 <p>See also: <a class="reference external" href="https://ed.ted.com/lessons/human-sperm-vs-the-sperm-whale-aatish-bhatia">https://ed.ted.com/lessons/human-sperm-vs-the-sperm-whale-aatish-bhatia</a></p>
 <p>Example: Low Reynolds number flow
 If the Reynolds number is very small (e.g. for very viscous flows) then we can neglect the inertial terms <span class="math notranslate nohighlight">\(\underline{u}.\nabla\underline{u}\)</span> to leave</p>
-<div class="amsmath math notranslate nohighlight" id="equation-147fb658-59c1-49c7-bb2f-852cb2b5b874">
-<span class="eqno">(15.1)<a class="headerlink" href="#equation-147fb658-59c1-49c7-bb2f-852cb2b5b874" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\underline{u}}{\partial t}=-\frac{1}{\rho}\nabla p+\nu \Delta \underline{u}+\underline{F}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-34d3fdc0-dbf2-4c78-953e-fd8a0e0646e6">
+<span class="eqno">()<a class="headerlink" href="#equation-34d3fdc0-dbf2-4c78-953e-fd8a0e0646e6" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\underline{u}}{\partial t}=-\frac{1}{\rho}\nabla p+\nu \Delta \underline{u}+\underline{F}.\end{equation}\]</div>
 <p>If we are interested in steady solutions in the absence of a body force, the system reduces to the equation for Stokes flow (creeping flow):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-333c56d3-5f45-46a7-9f5a-65cb526e6a24">
-<span class="eqno">(15.2)<a class="headerlink" href="#equation-333c56d3-5f45-46a7-9f5a-65cb526e6a24" title="Permalink to this equation">¶</a></span>\[\begin{equation}\mu \Delta \underline{u}-\nabla p=\underline{0}, \quad \nabla.\underline{u}=0.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3abdd233-ce89-4b93-a9bb-7198f073500e">
+<span class="eqno">()<a class="headerlink" href="#equation-3abdd233-ce89-4b93-a9bb-7198f073500e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\mu \Delta \underline{u}-\nabla p=\underline{0}, \quad \nabla.\underline{u}=0.\end{equation}\]</div>
 <p>The flow governed by this pair of equations exhibits the fascinating property of reversibility. If the boundary conditions conditions applied to the fluid are reversed, the fluid particles will return back along their previous paths. A striking demonstration of this phenomenon can be found here:</p>
 <p><a class="reference external" href="https://fyfluiddynamics.com/2012/02/the-reversibility-of-laminar-mixing-often-comes-as/">https://fyfluiddynamics.com/2012/02/the-reversibility-of-laminar-mixing-often-comes-as/</a></p>
 <p>This has important implications for the swimming of microcellular organisms, which are unable to propel themselves using flapping or “paddling” motions. The finding is known as the scallop theorem, since the opening and closing swimming mechanism used by scallops would be ineffective at low Reynolds numbers.</p>
@@ -358,7 +347,6 @@ A key feature of interest to mathematicians and engineers is the development of 
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="nondimensionalisation.html" title="previous page"><span class="section-number">14. </span>Non-dimensionalisation</a>
 
         </div>
         

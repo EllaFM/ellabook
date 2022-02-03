@@ -56,7 +56,6 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. Non-dimensionalisation" href="nondimensionalisation.html" />
     <link rel="prev" title="12. Unsteady: Water waves" href="waterwaves.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -158,16 +157,6 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    13. Unsteady: Sound waves
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="nondimensionalisation.html">
-   14. Non-dimensionalisation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reynolds.html">
-   15. Reynolds number
   </a>
  </li>
 </ul>
@@ -327,14 +316,14 @@ p=p_0+p_1,\qquad
 <div class="math notranslate nohighlight" id="equation-lineq">
 <span class="eqno">(13.3)<a class="headerlink" href="#equation-lineq" title="Permalink to this equation">¶</a></span>\[\frac{\partial^2 \rho_1}{\partial t}=-\nabla^2 p_1.\]</div>
 <p>To obtain the result fully in terms of a single quantity, we consult the Taylor expansion for <span class="math notranslate nohighlight">\(p\)</span> about <span class="math notranslate nohighlight">\(\rho=\rho_0\)</span>, which gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-98650c91-8f27-4568-bb98-4cc8d7d8253b">
-<span class="eqno">(13.4)<a class="headerlink" href="#equation-98650c91-8f27-4568-bb98-4cc8d7d8253b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-21b6d913-8cb4-4e5b-a1f4-96b2f18abfdd">
+<span class="eqno">(13.4)<a class="headerlink" href="#equation-21b6d913-8cb4-4e5b-a1f4-96b2f18abfdd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p&amp;=p(\rho_0)+(\rho-\rho_0)\frac{\mathrm{d}p}{\mathrm{d}\rho}\biggr|_{\rho=\rho_0}+\dots \\
 &amp;= p_0+\rho_1\frac{\mathrm{d}p}{\mathrm{d}\rho}\biggr|_{\rho=\rho_0}+\dots
 \end{align}\]</div>
 <p>Thus, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-521c6e82-ac08-4988-af39-29dc2c686403">
-<span class="eqno">(13.5)<a class="headerlink" href="#equation-521c6e82-ac08-4988-af39-29dc2c686403" title="Permalink to this equation">¶</a></span>\[\begin{equation}p_1=\rho_1 a_0^2, \qquad a_0^2=\frac{\mathrm{d}p}{\mathrm{d}\rho}\biggr|_{\rho=\rho_0}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d0a839ad-4830-44ef-bbea-3b970418e88e">
+<span class="eqno">(13.5)<a class="headerlink" href="#equation-d0a839ad-4830-44ef-bbea-3b970418e88e" title="Permalink to this equation">¶</a></span>\[\begin{equation}p_1=\rho_1 a_0^2, \qquad a_0^2=\frac{\mathrm{d}p}{\mathrm{d}\rho}\biggr|_{\rho=\rho_0}\end{equation}\]</div>
 <p>We can finally use this result to eliminate <span class="math notranslate nohighlight">\(\rho_1\)</span> from <a class="reference internal" href="#equation-lineq">(13.3)</a>, from which we obtain the 3D wave equation for waves travelling with velocity <span class="math notranslate nohighlight">\(a_0\)</span> :</p>
 <div class="math notranslate nohighlight" id="equation-waveeqn">
 <span class="eqno">(13.6)<a class="headerlink" href="#equation-waveeqn" title="Permalink to this equation">¶</a></span>\[\frac{\partial p_1}{\partial t^2}=a_0^2\nabla^2 p_1.\]</div>
@@ -350,8 +339,8 @@ p&amp;=p(\rho_0)+(\rho-\rho_0)\frac{\mathrm{d}p}{\mathrm{d}\rho}\biggr|_{\rho=\r
 </div>
 </div>
 <p>The speed at which sound waves travel is found to be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69728147-bdaa-44ca-8f8c-39ef16ec4eae">
-<span class="eqno">(13.7)<a class="headerlink" href="#equation-69728147-bdaa-44ca-8f8c-39ef16ec4eae" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1d5a14ba-6408-4781-8984-30b90b95811f">
+<span class="eqno">(13.7)<a class="headerlink" href="#equation-1d5a14ba-6408-4781-8984-30b90b95811f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_0=\sqrt{\frac{\gamma p_0}{\rho_0}},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_0, \rho_0\)</span> are the background pressure and density, and <span class="math notranslate nohighlight">\(\gamma\)</span> is constant for the gas in question. The derivation requires some tricky thermodynamics, which uses the first and second laws of thermodynamics, along with the ideal gas law and isentropic assumption. These assumptions were shown by Laplace to produce an estimate for the speed of sound in a gas that closely matches observation. You don’t need to know the details of the derivation, but they are given in <a class="reference internal" href="#thermal-physics"><span class="std std-numref">Section 13.3</span></a> for anyone interested.</p>
@@ -363,8 +352,8 @@ a_0=\sqrt{\frac{\gamma p_0}{\rho_0}},
 <h3><span class="section-number">13.1.1. </span>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h3>
 <p>There are two types of boundary conditions that are normally given when solving sound wave problems. Either the pressure is specified at the boundary or the velocity is specified at the boundary.</p>
 <p>The second case is equivalent to providing the derivative of the pressure at the boundary, using the relationship that we found in <a class="reference internal" href="#equation-linearsound">(13.2)</a> :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b1ecd29d-8251-44a3-91ea-38802c80538c">
-<span class="eqno">(13.8)<a class="headerlink" href="#equation-b1ecd29d-8251-44a3-91ea-38802c80538c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-feabb826-2589-4392-aa38-6002aaa726fe">
+<span class="eqno">(13.8)<a class="headerlink" href="#equation-feabb826-2589-4392-aa38-6002aaa726fe" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\partial p_1}{\partial t}=-\rho_0 \nabla.\underline{u}_1
 \end{equation}\]</div>
 <div class="exercise admonition" id="fluids/soundwaves-exercise-1">
@@ -372,8 +361,8 @@ a_0=\sqrt{\frac{\gamma p_0}{\rho_0}},
 <div class="section" id="exercise-content">
 <p>The human ear canal can be modelled as a straight 1D tube between <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=L\)</span>, which is open at the ear lobe end and closed at the ear drum end. A sound wave in the air surrounding the ear produces a pressure fluctuation <span class="math notranslate nohighlight">\(Pe^{-i\Gamma t}\)</span> at the ear lobe end.</p>
 <p>Verify that the following results satisfies the equation of motion and use suitable boundary conditions to find expressions for the amplitudes <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-19a8b3dc-de94-4d24-808e-bd20206ae107">
-<span class="eqno">(13.9)<a class="headerlink" href="#equation-19a8b3dc-de94-4d24-808e-bd20206ae107" title="Permalink to this equation">¶</a></span>\[\begin{equation}p_1=Ae^{i\Gamma(x/c-t)}+Be^{-i\Gamma(x/c+t)}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e6076886-3227-44cd-ba7c-b50e072752ae">
+<span class="eqno">(13.9)<a class="headerlink" href="#equation-e6076886-3227-44cd-ba7c-b50e072752ae" title="Permalink to this equation">¶</a></span>\[\begin{equation}p_1=Ae^{i\Gamma(x/c-t)}+Be^{-i\Gamma(x/c+t)}\end{equation}\]</div>
 <p>Under what conditions does resonance occur? Find the fundamental resonant frequency, given that the human ear canal is approximately 2.5cm long and that the speed of sound in air is approximately 340ms<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
 </div>
 </div>
@@ -382,8 +371,8 @@ a_0=\sqrt{\frac{\gamma p_0}{\rho_0}},
 <div class="section" id="the-supersonic-airfoil">
 <h2><span class="section-number">13.2. </span>The supersonic airfoil<a class="headerlink" href="#the-supersonic-airfoil" title="Permalink to this headline">¶</a></h2>
 <p>If the derivation above is repeated for the case of steady two-dimensional flow with uniform background motion <span class="math notranslate nohighlight">\(\underline{u}=(U,0,0)\)</span> then the equation of motion reduces to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5be66e38-3966-4d15-a453-8dd81cc4e8ea">
-<span class="eqno">(13.10)<a class="headerlink" href="#equation-5be66e38-3966-4d15-a453-8dd81cc4e8ea" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e915a6a7-affc-438d-a7fc-f229ffd21641">
+<span class="eqno">(13.10)<a class="headerlink" href="#equation-e915a6a7-affc-438d-a7fc-f229ffd21641" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 (1-M^2)\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}=0, \qquad M=\frac{U}{a_0}.
 \end{equation}\]</div>
 <p>The quantity <span class="math notranslate nohighlight">\(M\)</span> is called the Mach number. If this value is much smaller than smaller than 1, then the result is the solution can be well approximated by taking <span class="math notranslate nohighlight">\(M=0\)</span> so that the result reduces to the case of incompressible flow.</p>
@@ -395,24 +384,24 @@ a_0=\sqrt{\frac{\gamma p_0}{\rho_0}},
 <div class="section" id="id1">
 <h3><span class="section-number">13.3.1. </span>Thermal physics<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>According to the first law of thermodynamics, the total change of internal energy of a system is given by the relationship below, where <span class="math notranslate nohighlight">\(\mathrm{d}Q\)</span> is the change in heat energy and <span class="math notranslate nohighlight">\(p\mathrm{d}V\)</span> represents work done by pressure:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c24f1580-cae7-4cfd-9c1f-489cae7fd70c">
-<span class="eqno">(13.11)<a class="headerlink" href="#equation-c24f1580-cae7-4cfd-9c1f-489cae7fd70c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-957e8ce1-1dc1-4146-9d1c-5b4cb0ca23c5">
+<span class="eqno">(13.11)<a class="headerlink" href="#equation-957e8ce1-1dc1-4146-9d1c-5b4cb0ca23c5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathrm{d}U=\mathrm{d}Q-p\mathrm{d}V,
 \end{equation}\]</div>
 <p>The change in heat energy can be related to the change in entropy <span class="math notranslate nohighlight">\(\mathrm{d}S\)</span> by the second law of thermodynamics <span class="math notranslate nohighlight">\(\mathrm{d}S=\frac{\mathrm{d}Q}{T}\)</span>, and the total change of internal energy can be replaced by the change of enthalpy <span class="math notranslate nohighlight">\(H=U+pV\)</span> to give</p>
 <div class="math notranslate nohighlight" id="equation-entropy">
 <span class="eqno">(13.12)<a class="headerlink" href="#equation-entropy" title="Permalink to this equation">¶</a></span>\[\mathrm{d}S=\frac{1}{T}\mathrm{d}H-\frac{V}{T}\mathrm{d}p.\]</div>
 <p>For an ideal gas, the following relationships also hold, in which where <span class="math notranslate nohighlight">\(c_p\)</span> is the specific heat capacity at constant temperature and <span class="math notranslate nohighlight">\(c_v\)</span> is the specific heat capacity at constant volume:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf709406-0d49-4741-9dd3-3bf4da68c214">
-<span class="eqno">(13.13)<a class="headerlink" href="#equation-bf709406-0d49-4741-9dd3-3bf4da68c214" title="Permalink to this equation">¶</a></span>\[\begin{equation}pV=nRT, \qquad nR=(c_p-c_v), \qquad c_p=\frac{\mathrm{d}H}{\mathrm{d}T}, \qquad c_v=\frac{\mathrm{d}U}{\mathrm{d}T}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d8c914a6-c934-4f83-8e4b-13f56b57234c">
+<span class="eqno">(13.13)<a class="headerlink" href="#equation-d8c914a6-c934-4f83-8e4b-13f56b57234c" title="Permalink to this equation">¶</a></span>\[\begin{equation}pV=nRT, \qquad nR=(c_p-c_v), \qquad c_p=\frac{\mathrm{d}H}{\mathrm{d}T}, \qquad c_v=\frac{\mathrm{d}U}{\mathrm{d}T}\end{equation}\]</div>
 <p>Thus, we can rewrite <a class="reference internal" href="#equation-entropy">(13.12)</a> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05e6bd1e-dd10-4502-b66c-86b97b58ff27">
-<span class="eqno">(13.14)<a class="headerlink" href="#equation-05e6bd1e-dd10-4502-b66c-86b97b58ff27" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ca4f561e-0c36-4151-9ca8-008bf7f8dc49">
+<span class="eqno">(13.14)<a class="headerlink" href="#equation-ca4f561e-0c36-4151-9ca8-008bf7f8dc49" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathrm{d}S=\frac{c_p}{T}\mathrm{d}T-\frac{(c_p-c_v)}{p}\mathrm{d}p.
 \end{equation}\]</div>
 <p>For an adiabatic process, there is no change in entropy, <span class="math notranslate nohighlight">\(\mathrm{d}S=0\)</span>, and so integrating this expression gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c296c719-82e9-4132-9151-e9431f1104c9">
-<span class="eqno">(13.15)<a class="headerlink" href="#equation-c296c719-82e9-4132-9151-e9431f1104c9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b5011ec1-b725-4f69-96d5-83521657fb31">
+<span class="eqno">(13.15)<a class="headerlink" href="#equation-b5011ec1-b725-4f69-96d5-83521657fb31" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 c_p\ln(T/T_0)=(c_p-c_v)\ln(p/p_0)
 \end{equation}\]</div>
 <p>Finally, by using the relationship <span class="math notranslate nohighlight">\(p=\rho R T\)</span> to eliminate <span class="math notranslate nohighlight">\(T/T_0\)</span>, we may write the result</p>
@@ -423,8 +412,8 @@ c_p\ln(T/T_0)=(c_p-c_v)\ln(p/p_0)
 <div class="section" id="small-amplitude-perturbations">
 <h3><span class="section-number">13.3.2. </span>Small amplitude perturbations<a class="headerlink" href="#small-amplitude-perturbations" title="Permalink to this headline">¶</a></h3>
 <p>Taking the small perturbation approach used in <a class="reference internal" href="#equation-perturbations">(13.1)</a> and substituting into the isentropic relation <a class="reference internal" href="#equation-isentropic">(13.16)</a> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ae7917bc-7842-4e6a-a496-c33bf21fe3d6">
-<span class="eqno">(13.17)<a class="headerlink" href="#equation-ae7917bc-7842-4e6a-a496-c33bf21fe3d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7384bebd-628c-4e47-9494-4948f2083e6d">
+<span class="eqno">(13.17)<a class="headerlink" href="#equation-7384bebd-628c-4e47-9494-4948f2083e6d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\rho^{-\gamma}&amp;=p_0\rho_0^{-\gamma}\left(1+\frac{p_1}{p_0}\right)\left(1+\frac{\rho_1}{\rho_0}\right)^{-\gamma}\\
 &amp;=p_0\rho_0^{-\gamma}\left(1+\frac{p_1}{p_0}\right)\left(1-\gamma\frac{\rho_1}{\rho_0}+\dots\right)\\
 &amp;=p_0\rho_0^{-\gamma}\left(1+\left(\frac{p_1}{p_0}-\gamma\frac{\rho_1}{\rho_0}\right)+\dots\right)
@@ -462,7 +451,6 @@ p\rho^{-\gamma}&amp;=p_0\rho_0^{-\gamma}\left(1+\frac{p_1}{p_0}\right)\left(1+\f
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="waterwaves.html" title="previous page"><span class="section-number">12. </span>Unsteady: Water waves</a>
-    <a class='right-next' id="next-link" href="nondimensionalisation.html" title="next page"><span class="section-number">14. </span>Non-dimensionalisation</a>
 
         </div>
         

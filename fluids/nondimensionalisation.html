@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14. Non-dimensionalisation &#8212; Fluids</title>
+    <title>Non-dimensionalisation &#8212; Fluids</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,8 +56,6 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15. Reynolds number" href="reynolds.html" />
-    <link rel="prev" title="13. Unsteady: Sound waves" href="soundwaves.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,7 +92,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="mathideas.html">
    1. Mathematical background
@@ -158,16 +156,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="soundwaves.html">
    13. Unsteady: Sound waves
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   14. Non-dimensionalisation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reynolds.html">
-   15. Reynolds number
   </a>
  </li>
 </ul>
@@ -259,12 +247,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#viscous-flows">
-   14.1. Viscous flows
+   Viscous flows
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stub">
-   14.2. Stub
+   Stub
   </a>
  </li>
 </ul>
@@ -279,14 +267,14 @@
               <div>
                 
   <div class="section" id="non-dimensionalisation">
-<h1><span class="section-number">14. </span>Non-dimensionalisation<a class="headerlink" href="#non-dimensionalisation" title="Permalink to this headline">¶</a></h1>
+<h1>Non-dimensionalisation<a class="headerlink" href="#non-dimensionalisation" title="Permalink to this headline">¶</a></h1>
 <p>EARLY DRAFT: UNDER CONSTRUCTION</p>
 <p>We may introduce non-dimensional variables using a characteristic length scale <span class="math notranslate nohighlight">\(L\)</span>, velocity <span class="math notranslate nohighlight">\(U\)</span>, time <span class="math notranslate nohighlight">\(T\)</span>, pressure <span class="math notranslate nohighlight">\(P\)</span> and body force <span class="math notranslate nohighlight">\(g\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba82e195-f7df-4a5c-86bc-e4c81c56f022">
-<span class="eqno">(14.1)<a class="headerlink" href="#equation-ba82e195-f7df-4a5c-86bc-e4c81c56f022" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{x}_*=\frac{\underline{x}}{L}, \quad \underline{u}_*=\frac{\underline{u}}{U}, \quad t_*=\frac{t}{T}, \quad p_*=\frac{p}{P}, \quad \underline{F}_*=\frac{\underline{F}}{g}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e220282e-3894-4b3f-9f87-cca21cb07647">
+<span class="eqno">()<a class="headerlink" href="#equation-e220282e-3894-4b3f-9f87-cca21cb07647" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{x}_*=\frac{\underline{x}}{L}, \quad \underline{u}_*=\frac{\underline{u}}{U}, \quad t_*=\frac{t}{T}, \quad p_*=\frac{p}{P}, \quad \underline{F}_*=\frac{\underline{F}}{g}\end{equation}\]</div>
 <p>Making these substitutions gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d61313c4-3746-4c1a-a669-1756c3a72d6d">
-<span class="eqno">(14.2)<a class="headerlink" href="#equation-d61313c4-3746-4c1a-a669-1756c3a72d6d" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{L}{TU}\frac{\partial\underline{u}_*}{\partial t_*}+\underline{u_*}.\nabla_* \underline{u_*}=-\frac{P}{\rho U^2}\nabla p_* + \frac{\nu}{U L} \Delta_*\underline{u_*}+\frac{gL}{U^2}\underline{F}_*,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5fae6cd6-b047-40cc-8cb3-1077f6244a12">
+<span class="eqno">()<a class="headerlink" href="#equation-5fae6cd6-b047-40cc-8cb3-1077f6244a12" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{L}{TU}\frac{\partial\underline{u}_*}{\partial t_*}+\underline{u_*}.\nabla_* \underline{u_*}=-\frac{P}{\rho U^2}\nabla p_* + \frac{\nu}{U L} \Delta_*\underline{u_*}+\frac{gL}{U^2}\underline{F}_*,\end{equation}\]</div>
 <p>The following dimensionless parameters now appear in the normalized momentum equation:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -312,21 +300,21 @@
 </table>
 <p>If any of these quantities is large/small then we may construct an approximate solution by neglecting relevant terms in the equation.</p>
 <div class="section" id="viscous-flows">
-<h2><span class="section-number">14.1. </span>Viscous flows<a class="headerlink" href="#viscous-flows" title="Permalink to this headline">¶</a></h2>
+<h2>Viscous flows<a class="headerlink" href="#viscous-flows" title="Permalink to this headline">¶</a></h2>
 <p>The body force was neglected and it was assumed that the scales of local acceleration, inertia and pressure are comparable so that the following non-dimensionalisations of time and velocity are sensible:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f654b0f2-b304-4ae0-a75c-99096af66c9f">
-<span class="eqno">(14.3)<a class="headerlink" href="#equation-f654b0f2-b304-4ae0-a75c-99096af66c9f" title="Permalink to this equation">¶</a></span>\[\begin{equation}p=\frac{p_*}{\rho U^2}, \quad t=\frac{U t_*}{L}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0f3a0411-54bd-4f33-bc68-ce04bc531c01">
+<span class="eqno">()<a class="headerlink" href="#equation-0f3a0411-54bd-4f33-bc68-ce04bc531c01" title="Permalink to this equation">¶</a></span>\[\begin{equation}p=\frac{p_*}{\rho U^2}, \quad t=\frac{U t_*}{L}.\end{equation}\]</div>
 <p>We obtain the equation below. The asterisks can dropped, because from now on we will always work with dimensionless quantities:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e013124-c29e-4e00-8a8f-fbd3be997072">
-<span class="eqno">(14.4)<a class="headerlink" href="#equation-9e013124-c29e-4e00-8a8f-fbd3be997072" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\underline{u}}{\partial t}+\underline{u}.\nabla \underline{u}=-\nabla p + \mathrm{Re}^{-1} \nabla^2\underline{u}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a14d327e-027e-4ee6-a531-6f1116649b08">
+<span class="eqno">()<a class="headerlink" href="#equation-a14d327e-027e-4ee6-a531-6f1116649b08" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\underline{u}}{\partial t}+\underline{u}.\nabla \underline{u}=-\nabla p + \mathrm{Re}^{-1} \nabla^2\underline{u}\end{equation}\]</div>
 <p>The choice of characteristic length and velocity scales is somewhat arbitrary, but should be done to ensure that the physical quantities are <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> or smaller. The characteristic length scale should be chosen as a typical distance over which the fluid velocity changes by an amount of order <span class="math notranslate nohighlight">\(U\)</span>.</p>
 <p>Defining a characteristic length scale is not always easy, though fortunately practices have been established (at least for classical geometries) through years of study and enhanced understanding about flows. For instance, in the case of developed fluid flow through a pipe or channel the relevant characteristic length scale is the diameter of the enclosure. For unconfined flows, such as the flow of oncoming fluid over a flat plate it is more challenging to define a suitable length scale. We may, in that case, define the Reynolds number based on some fixed downstream reference distance from the leading edge of the plate that is applicable to the region of interest.</p>
 </div>
 <div class="section" id="stub">
-<h2><span class="section-number">14.2. </span>Stub<a class="headerlink" href="#stub" title="Permalink to this headline">¶</a></h2>
+<h2>Stub<a class="headerlink" href="#stub" title="Permalink to this headline">¶</a></h2>
 <p>Written out in full, these equations are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-858e7486-80c1-45e2-9514-a236da6ec8cc">
-<span class="eqno">(14.5)<a class="headerlink" href="#equation-858e7486-80c1-45e2-9514-a236da6ec8cc" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial u_x}{\partial t}+u_x\frac{\partial u_x}{\partial x}+u_y\frac{\partial u_x}{\partial y}+u_z\frac{\partial u_x}{\partial z}&amp;=-\frac{\partial p}{\partial x}+\mathrm{Re}^{-1}\left(\frac{\partial^2 u_x}{\partial x^2}+\frac{\partial^2 u_x}{\partial y^2}+\frac{\partial^2 u_x}{\partial z^2}\right)\\\frac{\partial u_y}{\partial t}+u_x\frac{\partial u_y}{\partial x}+u_y\frac{\partial u_y}{\partial y}+u_z\frac{\partial u_y}{\partial z}&amp;=-\frac{\partial p}{\partial y}+\mathrm{Re}^{-1}\left(\frac{\partial^2 u_y}{\partial x^2}+\frac{\partial^2 u_y}{\partial y^2}+\frac{\partial^2 u_y}{\partial z^2}\right)\\\frac{\partial u_z}{\partial t}+u_x\frac{\partial u_z}{\partial x}+u_y\frac{\partial u_z}{\partial y}+u_z\frac{\partial u_z}{\partial z}&amp;=-\frac{\partial p}{\partial z}+\mathrm{Re}^{-1}\left(\frac{\partial^2 u_z}{\partial x^2}+\frac{\partial^2 u_z}{\partial y^2}+\frac{\partial^2 u_z}{\partial z^2}\right)\\\frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}+\frac{\partial u_z}{\partial z}&amp;=0\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0974db04-5d02-4f5c-8c0f-9a3f2cfdb830">
+<span class="eqno">()<a class="headerlink" href="#equation-0974db04-5d02-4f5c-8c0f-9a3f2cfdb830" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial u_x}{\partial t}+u_x\frac{\partial u_x}{\partial x}+u_y\frac{\partial u_x}{\partial y}+u_z\frac{\partial u_x}{\partial z}&amp;=-\frac{\partial p}{\partial x}+\mathrm{Re}^{-1}\left(\frac{\partial^2 u_x}{\partial x^2}+\frac{\partial^2 u_x}{\partial y^2}+\frac{\partial^2 u_x}{\partial z^2}\right)\\\frac{\partial u_y}{\partial t}+u_x\frac{\partial u_y}{\partial x}+u_y\frac{\partial u_y}{\partial y}+u_z\frac{\partial u_y}{\partial z}&amp;=-\frac{\partial p}{\partial y}+\mathrm{Re}^{-1}\left(\frac{\partial^2 u_y}{\partial x^2}+\frac{\partial^2 u_y}{\partial y^2}+\frac{\partial^2 u_y}{\partial z^2}\right)\\\frac{\partial u_z}{\partial t}+u_x\frac{\partial u_z}{\partial x}+u_y\frac{\partial u_z}{\partial y}+u_z\frac{\partial u_z}{\partial z}&amp;=-\frac{\partial p}{\partial z}+\mathrm{Re}^{-1}\left(\frac{\partial^2 u_z}{\partial x^2}+\frac{\partial^2 u_z}{\partial y^2}+\frac{\partial^2 u_z}{\partial z^2}\right)\\\frac{\partial u_x}{\partial x}+\frac{\partial u_y}{\partial y}+\frac{\partial u_z}{\partial z}&amp;=0\end{align}\]</div>
 </div>
 </div>
 
@@ -355,8 +343,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="soundwaves.html" title="previous page"><span class="section-number">13. </span>Unsteady: Sound waves</a>
-    <a class='right-next' id="next-link" href="reynolds.html" title="next page"><span class="section-number">15. </span>Reynolds number</a>
 
         </div>
         
