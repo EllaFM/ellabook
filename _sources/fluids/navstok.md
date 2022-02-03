@@ -131,3 +131,16 @@ These equations were first derived and studied in the 1800s. However, despite ma
 :label: ex-navstok
 Taking the body force $\underline{F}$ to be zero, write out the Navier-Stokes equations in component form, where $\underline{x}=(x,y,z)$ and $\underline{u}=(u,v,w)$. For the conservation of momentum equation, you may write each of the $(x,y,z)$ components as a separate equation.
 ```
+
+(navstok-cylindrical)=
+## Navier-Stokes in cylindrical coordinates
+
+Written out in cylindrical coordinates, the components of the Navier-Stokes equations for $\underline{u}=(u_r,u_{\theta},u_z)$ are given by
+
+**Conservation of momentum:**
+\begin{align}\frac{\partial u_r}{\partial t}+(\underline{u}.\nabla)u_r-\frac{u_{\theta}^2}{r} &=-\frac{1}{\rho}\frac{\partial p}{\partial r}+\nu\left(\nabla^2 u_r-\frac{u_r}{r^2}-\frac{2}{r^2}\frac{\partial u_{\theta}}{\partial \theta}\right)\\ \frac{\partial u_{\theta}}{\partial t}+(\underline{u}.\nabla)u_{\theta}+\frac{u_r u_{\theta}}{r}&=-\frac{1}{\rho r}\frac{\partial p}{\partial \theta}+\nu\left(\nabla^2u_{\theta}+\frac{2}{r^2}\frac{\partial u_r}{\partial \theta}-\frac{u_{\theta}}{r^2}\right)\\ \frac{\partial u_z}{\partial t}+(\underline{u}.\nabla)u_z&=-\frac{1}{\rho}\frac{\partial p}{\partial z}+\nu\nabla^2 u_z \end{align}
+
+**Incompressibility:**
+\begin{equation}\frac{1}{r}\frac{\partial}{\partial r}(r u_r)+\frac{1}{r}\frac{\partial u_{\theta}}{\partial \theta}+\frac{\partial u_z}{\partial z}=0\end{equation}
+where
+\begin{equation}\underline{u}.\nabla = u_r\frac{\partial}{\partial r}+\frac{u_{\theta}}{\partial \theta}+u_z\frac{\partial}{\partial z}\qquad \qquad \nabla^2=\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial}{\partial r}\right)+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}+\frac{\partial^2}{\partial z^2} \end{equation}

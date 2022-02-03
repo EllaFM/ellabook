@@ -23,6 +23,7 @@ Since the relationship holds only for steady flows, the streamlines are identica
 
 *Note: There is also a version of Bernoulli's equation that applies to unsteady potential flows, but we do not consider it here*
 
+(bernoulli-derivation)=
 ## Derivation
 
 We start with the inviscid form of the momentum equation

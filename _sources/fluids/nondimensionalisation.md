@@ -1,5 +1,7 @@
 # Non-dimensionalisation
 
+EARLY DRAFT: UNDER CONSTRUCTION
+
 We may introduce non-dimensional variables using a characteristic length scale $L$, velocity $U$, time $T$, pressure $P$ and body force $g$:
 
 \begin{equation}\underline{x}_*=\frac{\underline{x}}{L}, \quad \underline{u}_*=\frac{\underline{u}}{U}, \quad t_*=\frac{t}{T}, \quad p_*=\frac{p}{P}, \quad \underline{F}_*=\frac{\underline{F}}{g}\end{equation}

@@ -137,7 +137,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vorticity.html">
-   9. Vorticity
+   9. Vortex transport
   </a>
  </li>
  <li class="toctree-l1">
@@ -152,12 +152,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="waterwaves.html">
-   12. Water waves
+   12. Unsteady: Water waves
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="soundwaves.html">
-   13. Sound waves
+   13. Unsteady: Sound waves
   </a>
  </li>
  <li class="toctree-l1">
@@ -299,16 +299,11 @@
 <h2><span class="section-number">5.1. </span>The material derivative<a class="headerlink" href="#the-material-derivative" title="Permalink to this headline">¶</a></h2>
 <p>In <a class="reference internal" href="mathideas.html#dir-deriv"><span class="std std-numref">Section 1.3</span></a> (<a class="reference internal" href="mathideas.html#dir-deriv"><span class="std std-ref">The directional derivative</span></a>) we found that the rate of change of a steady (time-independent) field <span class="math notranslate nohighlight">\(\phi(x,y,z)\)</span> in a given direction <span class="math notranslate nohighlight">\(\underline{u}\)</span> can be found by a scalar projection:</p>
 <div class="math notranslate nohighlight">
-\[D_{v}\phi(\underline{x})=\underline{u}.\nabla\phi.\]</div>
+\[D_{\underline{u}}\phi(\underline{x})=\underline{u}.\nabla\phi.\]</div>
 <p>Now, suppose that the background field is non-steady, so that <span class="math notranslate nohighlight">\(\phi=\phi(\underline{x},t)\)</span>. Proceeding as before by using the multi-variate chain rule, we immediately obtain</p>
 <div class="math notranslate nohighlight" id="equation-materialderivative">
 <span class="eqno">(5.1)<a class="headerlink" href="#equation-materialderivative" title="Permalink to this equation">¶</a></span>\[\frac{\mathrm{D}\phi}{\mathrm{D}t}=\frac{\partial \phi}{\partial t}+\underline{u}.\nabla\phi.\]</div>
 <p>This result is called the “material derivative” or “convective derivative”, and the notation <span class="math notranslate nohighlight">\(\mathrm{D}/\mathrm{D}t\)</span> is used in place of the ordinary derivative to signify its special significance. The first term accounts for the temporal evolution of the background field, and the second term (convection term) accounts for changes as a consequence of moving through the field with velocity <span class="math notranslate nohighlight">\(\underline{u}.\)</span></p>
-<p>An illustration of the idea is shown below. In the example, a fluid particle follows a path marked in blue through a potential field <span class="math notranslate nohighlight">\(\phi\)</span>, the strength of which is indicated by the background colour scheme and equipotential contours. The arrows on the plot depict the instantaneous gradient field of <span class="math notranslate nohighlight">\(\phi\)</span>, which you may notice is perpendicular to the equipotential curves.</p>
-<p>At each point on the trajectory, the experienced change in <span class="math notranslate nohighlight">\(\phi\)</span> is given as a sum of changes due to the evolution of time and position.</p>
-<br>
-<a class="reference internal image-reference" href="../_images/potentialfun.gif" id="potential-fun"><img alt="a particle moving through a potential field" class="align-center" id="potential-fun" src="../_images/potentialfun.gif" style="width: 328.8px; height: 352.0px;" /></a>
-<br>
 <p>The material derivative can also be applied to each element of a vector field <span class="math notranslate nohighlight">\(\underline{\phi}\)</span>, to give the change in <span class="math notranslate nohighlight">\(\underline{\phi}\)</span> following the motion of a fluid particle. For example <span class="math notranslate nohighlight">\(\frac{\mathrm{D}\underline{u}}{\mathrm{D}t}\)</span> gives the <em>convective acceleration</em>.</p>
 <div class="exercise admonition" id="ex-materialderivative">
 <p class="admonition-title"><span class="caption-number">Exercise 5.1 </span> </p>

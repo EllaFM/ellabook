@@ -1,7 +1,11 @@
-# Water waves
+# Unsteady: Water waves
 
+**In this section:**
 
-
+* Wavy solutions of the Laplace equation
+* Use of a "small amplitude" condition
+* Different dispersive properties for deep and shallow water
+* What are the paths followed by particles on the water surface?
 
 ## The flow geometry
 We consider the scenario shown below, where the axis $x$ points in the direction of wave motion, and axis $z$ points perpendicular to the water surface. We will assume plane motion, so there is no $y$ dependence.

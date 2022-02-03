@@ -1,5 +1,7 @@
 # Reynolds number
 
+EARLY DRAFT: UNDER CONSTRUCTION
+
 Big idea: Characterising viscous and inertial effects
 The Reynolds number gives a rough indication of the relative importance of inertial and viscous effects, and a way to easily make comparisons between experiments that use different fluids (viscosities) or differently sized apparatus. High and low Reynolds number flows are found to have quite different general characteristics, which can be investigated by scaling arguments in which the flow quantities are related to powers of the Reynolds number.
 
