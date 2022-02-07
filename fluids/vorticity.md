@@ -47,6 +47,7 @@ For example, this is the case for flows that are started from rest. The implicat
 
 However, the assumption of inviscid flow can lead to a paradox, as discussed below.
 
+(dalembert-paradox)=
 ## An apparent paradox : flow past a cylinder
 
 Here we will model flow past a cylinder as an inviscid, irrotational flow. By artificially introducing circulation, we will find that we can obtain a lift force without the presence of drag.

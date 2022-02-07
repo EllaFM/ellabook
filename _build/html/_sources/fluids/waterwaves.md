@@ -1,3 +1,4 @@
+(water-waves)=
 # Unsteady: Water waves
 
 **In this section:**

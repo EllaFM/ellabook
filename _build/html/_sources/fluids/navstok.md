@@ -110,7 +110,7 @@ The relationship between stress and strain is generally Hookean (i.e. linear) an
 ```{exercise}
 Research one example of a non-Newtonian fluid, and write 150 words about why it is non-Newtonian.
 ```
-
+(navstokeqn)=
 ## Navier-Stokes equations
 
 The conservation of momentum equation for a Newtonian fluid, together with the conservation of mass equation for incompressible flow are called the Navier-Stokes equations. The equations are given below, where $p$ is the hydrostatic pressure (mean normal stress), and $\nu=\frac{\mu}{\rho}$ is called the kinematic viscosity.
