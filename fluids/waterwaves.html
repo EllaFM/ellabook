@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="13. Unsteady: Sound waves" href="soundwaves.html" />
-    <link rel="prev" title="11. Geophysical phenomena" href="ekman.html" />
+    <link rel="prev" title="11. Vortex transport" href="vorticity.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -126,28 +126,28 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="scaling.html">
+   7. Scaling arguments
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="steadysoln.html">
-   7. Steady Euler solutions
+   8. Steady Euler solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bernoulli.html">
-   8. Bernoulli’s equation
+   9. Bernoulli’s equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="asymptotic.html">
+   10. Perturbations and asymptotics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vorticity.html">
-   9. Vortex transport
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="rotfram.html">
-   10. Rotational reference frames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ekman.html">
-   11. Geophysical phenomena
+   11. Vortex transport
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -158,6 +158,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="soundwaves.html">
    13. Unsteady: Sound waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rotfram.html">
+   14. Rotational reference frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ekman.html">
+   15. Geophysical phenomena
   </a>
  </li>
 </ul>
@@ -340,7 +350,7 @@
               <div>
                 
   <div class="section" id="unsteady-water-waves">
-<h1><span class="section-number">12. </span>Unsteady: Water waves<a class="headerlink" href="#unsteady-water-waves" title="Permalink to this headline">¶</a></h1>
+<span id="water-waves"></span><h1><span class="section-number">12. </span>Unsteady: Water waves<a class="headerlink" href="#unsteady-water-waves" title="Permalink to this headline">¶</a></h1>
 <p><strong>In this section:</strong></p>
 <ul class="simple">
 <li><p>Wavy solutions of the Laplace equation</p></li>
@@ -356,11 +366,11 @@
 <div class="section" id="mass-transport">
 <h2><span class="section-number">12.2. </span>Mass transport<a class="headerlink" href="#mass-transport" title="Permalink to this headline">¶</a></h2>
 <p>We make the simplifying assumption that the flow is irrotational, so that the velocity field can be written as the gradient of a potential <span class="math notranslate nohighlight">\(\underline{u}=\nabla\phi(\underline{x},t)\)</span>, and we obtain from the incompressibility condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0dff1e89-cbf0-4ef6-b4d7-a7635b8794c8">
-<span class="eqno">(12.1)<a class="headerlink" href="#equation-0dff1e89-cbf0-4ef6-b4d7-a7635b8794c8" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla^2\phi=\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial z^2}=0.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2ca8aa49-e0ea-426b-bf41-573c9858c599">
+<span class="eqno">(12.1)<a class="headerlink" href="#equation-2ca8aa49-e0ea-426b-bf41-573c9858c599" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla^2\phi=\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial z^2}=0.\end{equation}\]</div>
 <p>Seeking a travelling plane wave solution of the form <span class="math notranslate nohighlight">\(\phi=F(z)G(x-c t)\)</span> provides</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e4ef9fb-b8bc-40a5-983d-45313f4a69c2">
-<span class="eqno">(12.2)<a class="headerlink" href="#equation-2e4ef9fb-b8bc-40a5-983d-45313f4a69c2" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{F^{\prime\prime}}{F}=-\frac{G^{\prime\prime}}{G}=-k^2.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5f57f047-af99-47b1-bf5d-42a2768264cc">
+<span class="eqno">(12.2)<a class="headerlink" href="#equation-5f57f047-af99-47b1-bf5d-42a2768264cc" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{F^{\prime\prime}}{F}=-\frac{G^{\prime\prime}}{G}=-k^2.\end{equation}\]</div>
 <p>This choice of separation constant gives us exponential behaviour in the <span class="math notranslate nohighlight">\(z\)</span> direction, and oscillating behaviour in the <span class="math notranslate nohighlight">\(x\)</span>-direction:</p>
 <div class="math notranslate nohighlight" id="equation-phi-relation">
 <span class="eqno">(12.3)<a class="headerlink" href="#equation-phi-relation" title="Permalink to this equation">¶</a></span>\[\phi=\left[Ce^{k z}+De^{-kz}\right]\sin(k x-\omega t+\phi_0), \quad \omega=c k.\]</div>
@@ -368,28 +378,28 @@
 </div>
 <div class="section" id="bernoullis-equation-for-unsteady-potential-flow">
 <h2><span class="section-number">12.3. </span>Bernoulli’s equation for unsteady potential flow<a class="headerlink" href="#bernoullis-equation-for-unsteady-potential-flow" title="Permalink to this headline">¶</a></h2>
-<p>Recall that in equation <a class="reference internal" href="bernoulli.html#equation-vorticity-head">(8.4)</a> we obtained the following result from Euler’s equation, with a body force <span class="math notranslate nohighlight">\(\underline{F}=\underline{g}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba368a7d-07bd-4275-9fdd-69c88550e65f">
-<span class="eqno">(12.4)<a class="headerlink" href="#equation-ba368a7d-07bd-4275-9fdd-69c88550e65f" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \underline{u}}{\partial t}+(\underline{\omega}\times\underline{u})=-\nabla H, \quad H=\frac{p}{\rho}+gz+\frac{1}{2}|\underline{u}|^2\end{equation}\]</div>
+<p>Recall that in equation <a class="reference internal" href="bernoulli.html#equation-vorticity-head">(9.4)</a> we obtained the following result from Euler’s equation, with a body force <span class="math notranslate nohighlight">\(\underline{F}=\underline{g}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-28390f1e-aa13-47ec-b437-21dfa3d9e728">
+<span class="eqno">(12.4)<a class="headerlink" href="#equation-28390f1e-aa13-47ec-b437-21dfa3d9e728" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial \underline{u}}{\partial t}+(\underline{\omega}\times\underline{u})=-\nabla H, \quad H=\frac{p}{\rho}+gz+\frac{1}{2}|\underline{u}|^2\end{equation}\]</div>
 <p>Previously, we assumed that the flow was steady, and we took the scalar product with <span class="math notranslate nohighlight">\(\underline{u}\)</span> to eliminate the vorticity term, obtaining a result for the head <span class="math notranslate nohighlight">\(H\)</span> along a streamline.
 Here, we will not assume that the flow is steady, but we will instead note that for potential flow <span class="math notranslate nohighlight">\(\underline{u}=\nabla\phi(\underline{x},t)\)</span> the vorticity is identically zero, and so the equation of motion simplifies to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-decb26b0-9210-40d2-ba2c-0fb5baccd48c">
-<span class="eqno">(12.5)<a class="headerlink" href="#equation-decb26b0-9210-40d2-ba2c-0fb5baccd48c" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla\left(\frac{\partial\phi}{\partial t}+H\right)=\underline{0}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e438f031-ff17-4158-a162-1fddb657230d">
+<span class="eqno">(12.5)<a class="headerlink" href="#equation-e438f031-ff17-4158-a162-1fddb657230d" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla\left(\frac{\partial\phi}{\partial t}+H\right)=\underline{0}.\end{equation}\]</div>
 <p>Integrating gives the following result, where <span class="math notranslate nohighlight">\(F(t)\)</span> is an arbitrary function that does not affect the velocities, since they are obtained by taking the gradient:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f41f85c8-ada4-4aa7-9d87-f2b9d143452c">
-<span class="eqno">(12.6)<a class="headerlink" href="#equation-f41f85c8-ada4-4aa7-9d87-f2b9d143452c" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\phi}{\partial t}+\frac{p}{\rho}+\frac{1}{2}|\underline{u}|^2+gz=F(t), \quad \underline{u}=\nabla\phi.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-783ec7ad-be38-402b-a222-c4a340363e5a">
+<span class="eqno">(12.6)<a class="headerlink" href="#equation-783ec7ad-be38-402b-a222-c4a340363e5a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\phi}{\partial t}+\frac{p}{\rho}+\frac{1}{2}|\underline{u}|^2+gz=F(t), \quad \underline{u}=\nabla\phi.\end{equation}\]</div>
 </div>
 <div class="section" id="free-surface-conditions">
 <h2><span class="section-number">12.4. </span>Free surface conditions<a class="headerlink" href="#free-surface-conditions" title="Permalink to this headline">¶</a></h2>
 <p>The surface equation is of the form <span class="math notranslate nohighlight">\(z=\eta(x,t)\)</span>. We will assume that the free surface displacement <span class="math notranslate nohighlight">\(\eta\)</span> is small and apply Taylor expansion to the derivatives of <span class="math notranslate nohighlight">\(\phi\)</span> in the following manner:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe34e5b0-687a-4c22-9ce2-93e6ddc6f190">
-<span class="eqno">(12.7)<a class="headerlink" href="#equation-fe34e5b0-687a-4c22-9ce2-93e6ddc6f190" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\phi}{\partial z}\biggr|_{z=\eta}=\frac{\partial\phi}{\partial z}\biggr|_{z=0}+\eta\frac{\partial^2\phi}{\partial z^2}\biggr|_{z=0}+\dots\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cec9c395-686f-4a2f-9dd6-50f93f930a4a">
+<span class="eqno">(12.7)<a class="headerlink" href="#equation-cec9c395-686f-4a2f-9dd6-50f93f930a4a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\phi}{\partial z}\biggr|_{z=\eta}=\frac{\partial\phi}{\partial z}\biggr|_{z=0}+\eta\frac{\partial^2\phi}{\partial z^2}\biggr|_{z=0}+\dots\end{equation}\]</div>
 <p>Any terms that are quadratic order or higher will be neglected. We will justify this approach a posteriori.</p>
 <div class="section" id="dynamic-boundary-condition">
 <h3><span class="section-number">12.4.1. </span>Dynamic boundary condition<a class="headerlink" href="#dynamic-boundary-condition" title="Permalink to this headline">¶</a></h3>
 <p>We will apply Bernoulli’s theorem on the surface. Since <span class="math notranslate nohighlight">\(F(t)\)</span> is arbitrary, we will take <span class="math notranslate nohighlight">\(F(t)=\frac{p_0}{\rho}\)</span>, where <span class="math notranslate nohighlight">\(p_0\)</span> is the surface pressure (atmospheric pressure). Therefore we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f8a07cd-13e7-4ecb-a78c-5bf9d0a1d471">
-<span class="eqno">(12.8)<a class="headerlink" href="#equation-2f8a07cd-13e7-4ecb-a78c-5bf9d0a1d471" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9518e7e7-4596-45b6-a637-ea13905c7ee4">
+<span class="eqno">(12.8)<a class="headerlink" href="#equation-9518e7e7-4596-45b6-a637-ea13905c7ee4" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;&amp;\frac{\partial\phi}{\partial t}+\frac{1}{2}(u^2+w^2)+ gz&amp;=0 \qquad \text{on $z=\eta(x,t)$}\\
 \text{i.e } &amp;&amp;\frac{\partial \phi}{\partial t}+ g \eta &amp;=0 \qquad \text{on $z=0$ (linearizing)}
 \end{align}\]</div>
@@ -397,11 +407,11 @@ Here, we will not assume that the flow is steady, but we will instead note that 
 <div class="section" id="kinematic-boundary-condition">
 <h3><span class="section-number">12.4.2. </span>Kinematic boundary condition<a class="headerlink" href="#kinematic-boundary-condition" title="Permalink to this headline">¶</a></h3>
 <p>We define</p>
-<div class="amsmath math notranslate nohighlight" id="equation-77497b93-a737-48a8-84d5-c53c438a83fb">
-<span class="eqno">(12.9)<a class="headerlink" href="#equation-77497b93-a737-48a8-84d5-c53c438a83fb" title="Permalink to this equation">¶</a></span>\[\begin{equation}S(x,z,t)=z-\eta(x,t).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c0920726-e3ad-47ea-8eba-c5aaad0afd94">
+<span class="eqno">(12.9)<a class="headerlink" href="#equation-c0920726-e3ad-47ea-8eba-c5aaad0afd94" title="Permalink to this equation">¶</a></span>\[\begin{equation}S(x,z,t)=z-\eta(x,t).\end{equation}\]</div>
 <p>Since fluid particles on the surface must remain there, <span class="math notranslate nohighlight">\(S\)</span> is constant following the fluid. Application of <span class="math notranslate nohighlight">\(\frac{DS}{Dt}=0\)</span> with <span class="math notranslate nohighlight">\((u,v,w)=\nabla\phi\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-63dd717e-8359-4171-aeb0-eb47324d3410">
-<span class="eqno">(12.10)<a class="headerlink" href="#equation-63dd717e-8359-4171-aeb0-eb47324d3410" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1fbec996-5e09-4255-b8aa-13948282fcf5">
+<span class="eqno">(12.10)<a class="headerlink" href="#equation-1fbec996-5e09-4255-b8aa-13948282fcf5" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;&amp;\frac{\partial \eta}{\partial t}+\frac{\partial \phi}{\partial x}\frac{\partial \eta}{\partial x}&amp;=\frac{\partial\phi}{\partial z} \qquad \text{on $z=\eta(x,t)$}\\
 \text{i.e } &amp;&amp;\frac{\partial\eta}{\partial t}&amp;=\frac{\partial \phi}{\partial z} \qquad \text{on $z=0$ (linearizing)}
 \end{align}\]</div>
@@ -424,8 +434,8 @@ Here, we will not assume that the flow is steady, but we will instead note that 
 <div class="section" id="finite-depth">
 <h3><span class="section-number">12.5.2. </span>Finite depth<a class="headerlink" href="#finite-depth" title="Permalink to this headline">¶</a></h3>
 <p>For shallow/finite depth water, we impose a condition of no flow through the bed at <span class="math notranslate nohighlight">\(z=-h\)</span>. That is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93c867d4-6bb7-4542-b448-a0be74943954">
-<span class="eqno">(12.13)<a class="headerlink" href="#equation-93c867d4-6bb7-4542-b448-a0be74943954" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ad54d7f9-33f9-44a8-97de-809568061cbc">
+<span class="eqno">(12.13)<a class="headerlink" href="#equation-ad54d7f9-33f9-44a8-97de-809568061cbc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 w\biggr|_{z=-h}=\frac{\partial \phi}{\partial z}\biggr|_{z=-h}=0.
 \end{equation}\]</div>
 <p>For the solution given in <a class="reference internal" href="#equation-phi-relation">(12.3)</a>, we find that <span class="math notranslate nohighlight">\(Ce^{-kh}=De^{kh}\)</span> and we have</p>
@@ -439,8 +449,8 @@ w\biggr|_{z=-h}=\frac{\partial \phi}{\partial z}\biggr|_{z=-h}=0.
 <div class="section" id="id1">
 <h3><span class="section-number">12.6.1. </span>Deep water<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Application of the combined surface condition <a class="reference internal" href="#equation-combined-surface">(12.11)</a> to the deep water solution <a class="reference internal" href="#equation-deepwater">(12.12)</a> gives the dispersion relation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00554a1e-4ebe-4ccf-ac01-6877573055d0">
-<span class="eqno">(12.15)<a class="headerlink" href="#equation-00554a1e-4ebe-4ccf-ac01-6877573055d0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5f65db74-c6c0-4b87-8736-e9aa0d3d69c3">
+<span class="eqno">(12.15)<a class="headerlink" href="#equation-5f65db74-c6c0-4b87-8736-e9aa0d3d69c3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \omega^2 = gk \quad \Rightarrow \quad c=\sqrt{\frac{g\lambda}{2\pi}},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is the phase velocity. The result demonstrates that longer waves travel faster. Atlantic storms generate long waves of small amplitude (swell), which travel quickly (up to thousands of kilometers per day), and these waves arrive on the West Coast of Britain well before the slower-moving storm.</p>
@@ -454,8 +464,8 @@ w\biggr|_{z=-h}=\frac{\partial \phi}{\partial z}\biggr|_{z=-h}=0.
 <div class="section" id="id2">
 <h3><span class="section-number">12.6.2. </span>Finite depth<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Application of the combined surface condition <a class="reference internal" href="#equation-combined-surface">(12.11)</a> to the deep water solution <a class="reference internal" href="#equation-finitewater">(12.14)</a> gives the dispersion relation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36603054-b433-4dc3-8e73-85bf15c2fd94">
-<span class="eqno">(12.16)<a class="headerlink" href="#equation-36603054-b433-4dc3-8e73-85bf15c2fd94" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-beeadcf8-f650-43c8-af23-c8b11344f17c">
+<span class="eqno">(12.16)<a class="headerlink" href="#equation-beeadcf8-f650-43c8-af23-c8b11344f17c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \omega^2 = gk\tanh(kh).
 \end{equation}\]</div>
 <div class="exercise admonition" id="fluids/waterwaves-exercise-1">
@@ -475,23 +485,23 @@ For the longest ocean waves, such as waves generated by earthquakes, the approxi
 <div class="section" id="particle-paths">
 <h2><span class="section-number">12.8. </span>Particle paths<a class="headerlink" href="#particle-paths" title="Permalink to this headline">¶</a></h2>
 <p>Assume that the particle motion is small compared to the initial displacement <span class="math notranslate nohighlight">\((x_0,z_0)\)</span>, so that we can write</p>
-<div class="amsmath math notranslate nohighlight" id="equation-789ea60e-f52d-4760-8f7c-4196f489c68c">
-<span class="eqno">(12.17)<a class="headerlink" href="#equation-789ea60e-f52d-4760-8f7c-4196f489c68c" title="Permalink to this equation">¶</a></span>\[\begin{align}x&amp;=x_0+\epsilon X(x,z,t)\\ z&amp;=z_0+\epsilon Z(x,z,t).\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3c20a73d-d1f5-4150-a461-ff0ffe3cf498">
+<span class="eqno">(12.17)<a class="headerlink" href="#equation-3c20a73d-d1f5-4150-a461-ff0ffe3cf498" title="Permalink to this equation">¶</a></span>\[\begin{align}x&amp;=x_0+\epsilon X(x,z,t)\\ z&amp;=z_0+\epsilon Z(x,z,t).\end{align}\]</div>
 <p>Then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5d84cd17-8f37-4373-bd99-89687e5ce47e">
-<span class="eqno">(12.18)<a class="headerlink" href="#equation-5d84cd17-8f37-4373-bd99-89687e5ce47e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4bd50b4-11dc-40f1-9304-fdfbca68109c">
+<span class="eqno">(12.18)<a class="headerlink" href="#equation-e4bd50b4-11dc-40f1-9304-fdfbca68109c" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \epsilon \frac{\mathrm{d}X}{\mathrm{d}t}&amp;=u(x_0+\epsilon X, z_0+\epsilon Z,t)\simeq u(x_0,z_0,t)\\
 \epsilon \frac{\mathrm{d}Z}{\mathrm{d}t}&amp;=w(x_0+\epsilon X, z_0+\epsilon Z,t)\simeq w(x_0,z_0,t)\end{align}\]</div>
 <p>For deep water this gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89178c47-c441-4306-aa2b-8332ff776bad">
-<span class="eqno">(12.19)<a class="headerlink" href="#equation-89178c47-c441-4306-aa2b-8332ff776bad" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-453bd80f-4cd5-47f6-a518-a8301eaf1c8c">
+<span class="eqno">(12.19)<a class="headerlink" href="#equation-453bd80f-4cd5-47f6-a518-a8301eaf1c8c" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \epsilon \frac{\mathrm{d}X}{\mathrm{d}t}&amp;=A\omega e^{k z_0}\cos(k x_0-\omega t),\\
 \epsilon \frac{\mathrm{d}Z}{\mathrm{d}t}&amp;=A\omega e^{k z_0}\sin(k x_0-\omega t).
  \end{align}\]</div>
 <p>[If you are wondering how these can balance, it is because the wave amplitudes are small: <span class="math notranslate nohighlight">\(Ak\sim \epsilon\)</span>.]
 Integrating with respect to <span class="math notranslate nohighlight">\(t\)</span> and combining the results gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e98eee99-d295-4370-82ad-a481e707e821">
-<span class="eqno">(12.20)<a class="headerlink" href="#equation-e98eee99-d295-4370-82ad-a481e707e821" title="Permalink to this equation">¶</a></span>\[\begin{equation}(\epsilon X)^2+(\epsilon Z)^2 = (Ae^{kz_0})^2.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-135c699a-0ba9-4c65-bb60-5cbae090611c">
+<span class="eqno">(12.20)<a class="headerlink" href="#equation-135c699a-0ba9-4c65-bb60-5cbae090611c" title="Permalink to this equation">¶</a></span>\[\begin{equation}(\epsilon X)^2+(\epsilon Z)^2 = (Ae^{kz_0})^2.\end{equation}\]</div>
 <p>The particle paths are therefore circular, and the radius of the circles <span class="math notranslate nohighlight">\(Ae^{k z_0}\)</span> decreases exponentially with depth.</p>
 <div class="exercise admonition" id="fluids/waterwaves-exercise-2">
 <p class="admonition-title"><span class="caption-number">Exercise 12.3 </span> </p>
@@ -527,7 +537,7 @@ Integrating with respect to <span class="math notranslate nohighlight">\(t\)</sp
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="ekman.html" title="previous page"><span class="section-number">11. </span>Geophysical phenomena</a>
+    <a class='left-prev' id="prev-link" href="vorticity.html" title="previous page"><span class="section-number">11. </span>Vortex transport</a>
     <a class='right-next' id="next-link" href="soundwaves.html" title="next page"><span class="section-number">13. </span>Unsteady: Sound waves</a>
 
         </div>

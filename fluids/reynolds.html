@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reynolds number &#8212; Fluids</title>
+    <title>15. Reynolds number &#8212; Fluids</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,6 +56,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="16. Group velocity" href="waveideas.html" />
+    <link rel="prev" title="14. Scaling arguments" href="nondimensionalisation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,7 +94,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="mathideas.html">
    1. Mathematical background
@@ -156,6 +158,21 @@
  <li class="toctree-l1">
   <a class="reference internal" href="soundwaves.html">
    13. Unsteady: Sound waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="nondimensionalisation.html">
+   14. Scaling arguments
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   15. Reynolds number
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waveideas.html">
+   16. Group velocity
   </a>
  </li>
 </ul>
@@ -246,8 +263,30 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-we-introduce-the-reynolds-number">
-   Why we introduce the Reynolds number
+  <a class="reference internal nav-link" href="#boundary-layers">
+   15.1. Boundary layers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hele-shaw-flow">
+     15.1.1. Hele-Shaw flow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#high-reynolds-number-flow">
+   15.2. High Reynolds number flow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resolution">
+   15.3. Resolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transition-to-turbulence">
+   15.4. Transition to turbulence
   </a>
  </li>
 </ul>
@@ -262,55 +301,43 @@
               <div>
                 
   <div class="section" id="reynolds-number">
-<h1>Reynolds number<a class="headerlink" href="#reynolds-number" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">15. </span>Reynolds number<a class="headerlink" href="#reynolds-number" title="Permalink to this headline">¶</a></h1>
 <p>EARLY DRAFT: UNDER CONSTRUCTION</p>
-<p>Big idea: Characterising viscous and inertial effects
-The Reynolds number gives a rough indication of the relative importance of inertial and viscous effects, and a way to easily make comparisons between experiments that use different fluids (viscosities) or differently sized apparatus. High and low Reynolds number flows are found to have quite different general characteristics, which can be investigated by scaling arguments in which the flow quantities are related to powers of the Reynolds number.</p>
-<div class="section" id="why-we-introduce-the-reynolds-number">
-<h2>Why we introduce the Reynolds number<a class="headerlink" href="#why-we-introduce-the-reynolds-number" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>To simplify comparison between experiments:</p></li>
-</ol>
-<p>Example: Consider a hypothetical experiment in which fluid flows through a long channel between two walls. In this experiment we might take the characteristic velocity and length scales to to be the average velocity (determined by the mass flow rate) and the distance between the two walls (or the maximum distance if they are curved).</p>
+<div class="section" id="boundary-layers">
+<h2><span class="section-number">15.1. </span>Boundary layers<a class="headerlink" href="#boundary-layers" title="Permalink to this headline">¶</a></h2>
+<p>We must be very careful when neglecting terms.</p>
+<div class="section" id="hele-shaw-flow">
+<h3><span class="section-number">15.1.1. </span>Hele-Shaw flow<a class="headerlink" href="#hele-shaw-flow" title="Permalink to this headline">¶</a></h3>
+<p>Consider a cylinder placed into an oncoming highly viscous 2D fluid flow of velocity <span class="math notranslate nohighlight">\(U\)</span>, as shown in the image below.
+<br></p>
+<a class="reference internal image-reference" href="../_images/hele-shaw.png" id="hele-shaw"><img alt="Hele-Shaw" class="align-center" id="hele-shaw" src="../_images/hele-shaw.png" style="width: 512.0px; height: 311.20000000000005px;" /></a>
 <br>
-<a class="reference internal image-reference" href="../_images/channel.png" id="channel"><img alt="channel flow" class="align-center" id="channel" src="../_images/channel.png" style="width: 288.0px; height: 76.0px;" /></a>
-<br>
-<p>Now suppose that we wish to repeat the experiment with the walls moved further apart. The geometry of the problem remains otherwise the same, and so the only thing that changes in the non-dimensionalised problem is the Reynolds number. The effect of moving the walls further apart is identical to the effect of either increasing the velocity or decreasing the viscosity - since each of these changes only results in an increase in the Reynolds number. This allows experimenters to use reduced scale models to investigate fluid phenomena (e.g. aerodynamic performance), by substituting the fluid (e.g. air) for a more viscous fluid (e.g. water). Broadly speaking, we can use a single parameter to compare results between multiple experiments.</p>
-<ol class="simple">
-<li><p>To quantify the relationship between viscous and inertial terms:</p></li>
-</ol>
-<p>To see why the Reynolds number is important, notice that in the dimensional form of the equations we have</p>
-<p>inertial term: <span class="math notranslate nohighlight">\(\underline{u}.\nabla\underline{u} =\mathcal{O}(U^2/L)\)</span>
-viscous term: <span class="math notranslate nohighlight">\(\nu\Delta\underline{u} =\mathcal{O}(\nu U/L^2)\)</span>
-So the ratio of inertial<span class="math notranslate nohighlight">\(/\)</span>viscous terms is <span class="math notranslate nohighlight">\(\mathcal{O}\left(\frac{U^2/L}{\nu U/L^2}\right)=\mathcal{O}(\mathrm{Re})\)</span>.</p>
-<p>The Reynolds number therefore gives a rough indication of the relative importance of inertial and viscous effects. At low Reynolds numbers (<span class="math notranslate nohighlight">\(\mathrm{Re}\ll 1)\)</span> the effects of viscosity appear to be very important whilst at high Reynolds numbers (<span class="math notranslate nohighlight">\(\mathrm{Re\gg 1}\)</span>) the effects of inertia appear to dominate.</p>
-<p>See also: <a class="reference external" href="https://ed.ted.com/lessons/human-sperm-vs-the-sperm-whale-aatish-bhatia">https://ed.ted.com/lessons/human-sperm-vs-the-sperm-whale-aatish-bhatia</a></p>
-<p>Example: Low Reynolds number flow
-If the Reynolds number is very small (e.g. for very viscous flows) then we can neglect the inertial terms <span class="math notranslate nohighlight">\(\underline{u}.\nabla\underline{u}\)</span> to leave</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ef55985-e47e-4e15-9720-aef692d64f04">
-<span class="eqno">()<a class="headerlink" href="#equation-9ef55985-e47e-4e15-9720-aef692d64f04" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\underline{u}}{\partial t}=-\frac{1}{\rho}\nabla p+\nu \Delta \underline{u}+\underline{F}.\end{equation}\]</div>
-<p>If we are interested in steady solutions in the absence of a body force, the system reduces to the equation for Stokes flow (creeping flow):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ad05959-d479-468d-b39a-e5c33c5a2d5b">
-<span class="eqno">()<a class="headerlink" href="#equation-3ad05959-d479-468d-b39a-e5c33c5a2d5b" title="Permalink to this equation">¶</a></span>\[\begin{equation}\mu \Delta \underline{u}-\nabla p=\underline{0}, \quad \nabla.\underline{u}=0.\end{equation}\]</div>
-<p>The flow governed by this pair of equations exhibits the fascinating property of reversibility. If the boundary conditions conditions applied to the fluid are reversed, the fluid particles will return back along their previous paths. A striking demonstration of this phenomenon can be found here:</p>
-<p><a class="reference external" href="https://fyfluiddynamics.com/2012/02/the-reversibility-of-laminar-mixing-often-comes-as/">https://fyfluiddynamics.com/2012/02/the-reversibility-of-laminar-mixing-often-comes-as/</a></p>
-<p>This has important implications for the swimming of microcellular organisms, which are unable to propel themselves using flapping or “paddling” motions. The finding is known as the scallop theorem, since the opening and closing swimming mechanism used by scallops would be ineffective at low Reynolds numbers.</p>
-<p>Organisms that inhabit a low Reynolds number world employ a variety of exotic swimming techniques to overcome these limitations, such as the use of corkscrewing flagella. Discussion can be found in a delightful, original paper on Life at Low Reynolds Numbers by E.M. Purcell. I also recommend watching a portion (from 25:00) of this lecture by the legendary fluid dynamicist G.I. Taylor, given over half a century ago.</p>
-<p>We must be very careful when neglecting terms. For example, consider a cylinder placed into an oncoming highly viscous 2D fluid flow of velocity <span class="math notranslate nohighlight">\(U\)</span>, as shown in the image below. If we define <span class="math notranslate nohighlight">\(\mathrm{Re}=\frac{Ua}{\nu}\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is the diameter of the cylinder, then the effect of inertia will apparently be negligible near to the cylinder. However, away from the boundary the characteristic length scale associated with changes in velocity is larger, as the flow becomes more and more uniform. Therefore the effects of inertia are more important in the outer flow regions.</p>
-<p>Hele Shaw flow</p>
-<p>In fact, if the effects of inertia are neglected away from the surface of the sphere then the mathematical equations are ill-posed and it becomes impossible to satisfy appropriate boundary conditions for the far-field. This is known as Stokes’ paradox. It can be resolved by taking a different approximation away from the boundary, that includes inertial terms; and blending or “matching” the expressions obtained from each of the two approximations. The mathematics required to do this is known as matched asymptotics.</p>
-<p>It is based on the idea of starting with the full non-dimensional Navier stokes equations and constructing scaling arguments that relate fluid quantities to powers of the Reynolds number, to allow balancing of different physical effects in the equations. Different scaling laws apply in different regimes of the flow, based on physical assumptions, such as the distance from a boundary. We will not study the techniques of matched asymptotics as it is a very involved subject. Although the history of matched asymptotics is strongly associated with fluid dynamics, it has wide applications to areas including quantum mechanics. The techniques are usually first encountered in graduate level courses, and we will not attempt an investigation here, though a “toy” demonstration is given at the end of this chapter.</p>
-<p>High Reynolds number flow
-In the case of High Reynolds number flow it is the viscous effects that appear to be small. Neglecting the viscous terms <span class="math notranslate nohighlight">\(\nu\Delta \underline{u}\)</span>  results in the Euler’s equations of fluid dynamics, which we will examine in the next chapter. Again, however, we need to be extremely careful.</p>
+<p>If we define the following ratio, where <span class="math notranslate nohighlight">\(a\)</span> is the diameter of the cylinder, then the effect of inertia will apparently be negligible near to the cylinder:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-25307707-d27a-41f5-9825-fed6fbdc6bf4">
+<span class="eqno">(15.1)<a class="headerlink" href="#equation-25307707-d27a-41f5-9825-fed6fbdc6bf4" title="Permalink to this equation">¶</a></span>\[\begin{equation}\mathrm{Re}=\frac{Ua}{\nu}.\end{equation}\]</div>
+<p>However, away from the boundary the characteristic length scale associated with changes in velocity is larger, as the flow becomes more and more uniform. Therefore the effects of inertia are more important in the outer flow regions. In fact, if the effects of inertia are neglected away from the surface of the sphere then the mathematical equations are ill-posed and it becomes impossible to satisfy appropriate boundary conditions for the far-field. This is known as Stokes’ paradox.</p>
+</div>
+</div>
+<div class="section" id="high-reynolds-number-flow">
+<h2><span class="section-number">15.2. </span>High Reynolds number flow<a class="headerlink" href="#high-reynolds-number-flow" title="Permalink to this headline">¶</a></h2>
 <p>Let us return to the idea of a cylinder placed into an oncoming flow- this time at high speed. Early experimenters and mathematicians did not have the techniques of high speed photography available to them, and there was disagreement about what happens at the fluid boundary. Many believed that fluid particles would “stick” to the boundary and transfer momentum, whilst others believed that the flow would move smoothly past the boundary.</p>
 <p>Neither approach fitted well with the equations of motion. On one hand, transfer of momentum within the fluid requires viscosity, and it would be impossible to satisfy the no-slip condition at the boundary if these effects were neglected. On the other hand, it is plain from scaling arguments that for high speed flows of low viscosity fluid (such as air) the effects of viscosity should be much less important than inertia. We will also see later in this course that ignoring the no slip condition results in D’Alembert’s paradox of zero drag, and zero lift - meaning that aeroplanes would never fly!</p>
 <p>The difficulty was eventually understood by Prandtl (1904), who reasoned for the existence of a narrow region called a boundary layer, in which the horizontal velocity increases rapidly in the direction away from the plate. In this region, viscous terms are comparable in magnitude to inertial terms, and act to decelerate the flow at the surface by diffusion of momentum. The viscous solution is then matched to the inviscid solution at the edge of the boundary layer to form a composite solution that is valid throughout the entire flow field. Matched asymptotics again!</p>
-<p>An illustration of the concept of a boundary layer is provided below. The image comes from this paper about the history of boundary layer theory, which I think is written in a way that is fairly accessible to undergraduate physicists.</p>
+<p>An illustration of the concept of a boundary layer is provided below. The image comes from <a class="reference external" href="https://doi.org/10.1063/1.2169443">this paper</a> about the history of boundary layer theory, which I think is written in a way that is fairly accessible to undergraduate physicists.</p>
 <br>
-<a class="reference internal image-reference" href="fluids/navstok_img/shear_layer.png" id="shear-layer"><img alt="boundary layer" class="align-center" id="shear-layer" src="fluids/navstok_img/shear_layer.png" /></a>
+<a class="reference internal image-reference" href="../_images/prandtl_bl.gif" id="shear-layer"><img alt="boundary layer" class="align-center" id="shear-layer" src="../_images/prandtl_bl.gif" style="width: 600.0px; height: 475.6px;" /></a>
 <br>
-<p>Transition to turbulence
-A key feature of interest to mathematicians and engineers is the development of models that can account for laminar-turbulent transition. A laminar flow is an orderly flow characterised by fluid layers moving smoothly past one another, whilst a turbulent state is characterised by disordered, chaotic motion occurring a variety of length scales (a “cascade” of scales). Transition between these states can occur spontaneously, as illustrated in the video example below.</p>
+</div>
+<div class="section" id="resolution">
+<h2><span class="section-number">15.3. </span>Resolution<a class="headerlink" href="#resolution" title="Permalink to this headline">¶</a></h2>
+<p>The paradox can be resolved by taking a different approximation away from the boundary, that includes inertial terms; and blending or “matching” the expressions obtained from the inner and outer layers of fluid. The mathematics required to do this is known as matched asymptotics.</p>
+<p>Within each layer, variables in the full non-dimensional NS equations are related to powers of the <span class="math notranslate nohighlight">\(\mathrm{Re}\)</span> by scaling arguments based on physical assumptions, such as the distance to a boundary. The different scalings used in each layer result in the balancing of different physical effects in the equations.</p>
+<p>We will not study the techniques of matched asymptotics as it is a very involved subject, which is often first encountered in graduate level courses. Although the history of matched asymptotics is strongly associated with fluid dynamics, it has wide applications to areas including quantum mechanics.</p>
+<p>In the case of High Reynolds number flow it is the viscous effects that appear to be small. Neglecting the viscous terms <span class="math notranslate nohighlight">\(\nu\Delta \underline{u}\)</span>  results in the Euler’s equations, which we have used extensively in this course. Again, however, we need to be extremely careful.</p>
+</div>
+<div class="section" id="transition-to-turbulence">
+<h2><span class="section-number">15.4. </span>Transition to turbulence<a class="headerlink" href="#transition-to-turbulence" title="Permalink to this headline">¶</a></h2>
+<p>A key feature of interest to mathematicians and engineers is the development of models that can account for laminar-turbulent transition. A laminar flow is an orderly flow characterised by fluid layers moving smoothly past one another, whilst a turbulent state is characterised by disordered, chaotic motion occurring a variety of length scales (a “cascade” of scales). Transition between these states can occur spontaneously, as illustrated in the video example below.</p>
 <p>In the experiment, fluid under carefully controlled conditions is ran through a pipe. Dye is injected into the flow to visualise how the fluid particles behave. This type of visualisation is called a streakline. You will read about streaklines in the next chapter. In the experiment, the speed of the fluid in the pipe is gradually increased, which is seen to result in transition from a laminar to a turbulent state.</p>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=CAM-ubZIdFg">https://www.youtube.com/watch?v=CAM-ubZIdFg</a></p>
 <p>A good understanding of the features of the conditions that lead to turbulence could help with engineers learn to control transition. For an example discussion, see this video [2:30-8:05]. Sometimes the desire may be to facilitate turbulence, for instance as an efficient mechanism of heat transfer or a means of achieving liquid-jet breakup in fuel injection systems. Conversely, in aerodynamic applications turbulent skin-friction drag can be as much as ten times that of laminar flow at the same Reynolds number, and accounts for 50% of the total drag experienced by a subsonic aircraft. This means that any reduction in turbulence offers huge potential for fuel savings as well as reduction of greenhouse gases and other pollutants.</p>
@@ -347,6 +374,8 @@ A key feature of interest to mathematicians and engineers is the development of 
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="nondimensionalisation.html" title="previous page"><span class="section-number">14. </span>Scaling arguments</a>
+    <a class='right-next' id="next-link" href="waveideas.html" title="next page"><span class="section-number">16. </span>Group velocity</a>
 
         </div>
         

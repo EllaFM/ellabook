@@ -56,7 +56,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7. Steady Euler solutions" href="steadysoln.html" />
+    <link rel="next" title="7. Scaling arguments" href="scaling.html" />
     <link rel="prev" title="5. Conservation law derivations" href="conservation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -126,28 +126,28 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="scaling.html">
+   7. Scaling arguments
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="steadysoln.html">
-   7. Steady Euler solutions
+   8. Steady Euler solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bernoulli.html">
-   8. Bernoulli’s equation
+   9. Bernoulli’s equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="asymptotic.html">
+   10. Perturbations and asymptotics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vorticity.html">
-   9. Vortex transport
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="rotfram.html">
-   10. Rotational reference frames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ekman.html">
-   11. Geophysical phenomena
+   11. Vortex transport
   </a>
  </li>
  <li class="toctree-l1">
@@ -158,6 +158,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="soundwaves.html">
    13. Unsteady: Sound waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rotfram.html">
+   14. Rotational reference frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ekman.html">
+   15. Geophysical phenomena
   </a>
  </li>
 </ul>
@@ -370,12 +380,12 @@
 </div>
 </div>
 <div class="section" id="navier-stokes-equations">
-<h2><span class="section-number">6.4. </span>Navier-Stokes equations<a class="headerlink" href="#navier-stokes-equations" title="Permalink to this headline">¶</a></h2>
+<span id="navstokeqn"></span><h2><span class="section-number">6.4. </span>Navier-Stokes equations<a class="headerlink" href="#navier-stokes-equations" title="Permalink to this headline">¶</a></h2>
 <p>The conservation of momentum equation for a Newtonian fluid, together with the conservation of mass equation for incompressible flow are called the Navier-Stokes equations. The equations are given below, where <span class="math notranslate nohighlight">\(p\)</span> is the hydrostatic pressure (mean normal stress), and <span class="math notranslate nohighlight">\(\nu=\frac{\mu}{\rho}\)</span> is called the kinematic viscosity.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd9f9c8e-8789-4483-b3e2-1847a71f071a">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-bd9f9c8e-8789-4483-b3e2-1847a71f071a" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\underline{u}}{\partial t}+\underline{u}.\nabla\underline{u}=-\frac{1}{\rho}\nabla p+\nu \nabla^2 \underline{u}+\underline{F},\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-dc4f0cee-cdd2-4303-8f1e-1a5c659b26e6">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-dc4f0cee-cdd2-4303-8f1e-1a5c659b26e6" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla.\underline{u}=0.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-494372b8-9b4b-44fd-a13f-f83b431c0599">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-494372b8-9b4b-44fd-a13f-f83b431c0599" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{\partial\underline{u}}{\partial t}+\underline{u}.\nabla\underline{u}=-\frac{1}{\rho}\nabla p+\nu \nabla^2 \underline{u}+\underline{F},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-eaed18e5-18ae-4296-affb-1293864aa876">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-eaed18e5-18ae-4296-affb-1293864aa876" title="Permalink to this equation">¶</a></span>\[\begin{equation}\nabla.\underline{u}=0.\end{equation}\]</div>
 <p>The first equation (conservation of mass) represents a balance between convective acceleration, pressure forces and viscous diffusion. The second equation represents the incompressibility condition.</p>
 <div class="theorem admonition">
 <p class="admonition-title">Euler’s equations</p>
@@ -393,14 +403,14 @@
 <span id="navstok-cylindrical"></span><h2><span class="section-number">6.5. </span>Navier-Stokes in cylindrical coordinates<a class="headerlink" href="#navier-stokes-in-cylindrical-coordinates" title="Permalink to this headline">¶</a></h2>
 <p>Written out in cylindrical coordinates, the components of the Navier-Stokes equations for <span class="math notranslate nohighlight">\(\underline{u}=(u_r,u_{\theta},u_z)\)</span> are given by</p>
 <p><strong>Conservation of momentum:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1c38fff-f199-42d8-9231-4927a5fbf956">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-e1c38fff-f199-42d8-9231-4927a5fbf956" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial u_r}{\partial t}+(\underline{u}.\nabla)u_r-\frac{u_{\theta}^2}{r} &amp;=-\frac{1}{\rho}\frac{\partial p}{\partial r}+\nu\left(\nabla^2 u_r-\frac{u_r}{r^2}-\frac{2}{r^2}\frac{\partial u_{\theta}}{\partial \theta}\right)\\ \frac{\partial u_{\theta}}{\partial t}+(\underline{u}.\nabla)u_{\theta}+\frac{u_r u_{\theta}}{r}&amp;=-\frac{1}{\rho r}\frac{\partial p}{\partial \theta}+\nu\left(\nabla^2u_{\theta}+\frac{2}{r^2}\frac{\partial u_r}{\partial \theta}-\frac{u_{\theta}}{r^2}\right)\\ \frac{\partial u_z}{\partial t}+(\underline{u}.\nabla)u_z&amp;=-\frac{1}{\rho}\frac{\partial p}{\partial z}+\nu\nabla^2 u_z \end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0eea2f88-9415-4be8-a7e0-f177feff5c91">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-0eea2f88-9415-4be8-a7e0-f177feff5c91" title="Permalink to this equation">¶</a></span>\[\begin{align}\frac{\partial u_r}{\partial t}+(\underline{u}.\nabla)u_r-\frac{u_{\theta}^2}{r} &amp;=-\frac{1}{\rho}\frac{\partial p}{\partial r}+\nu\left(\nabla^2 u_r-\frac{u_r}{r^2}-\frac{2}{r^2}\frac{\partial u_{\theta}}{\partial \theta}\right)\\ \frac{\partial u_{\theta}}{\partial t}+(\underline{u}.\nabla)u_{\theta}+\frac{u_r u_{\theta}}{r}&amp;=-\frac{1}{\rho r}\frac{\partial p}{\partial \theta}+\nu\left(\nabla^2u_{\theta}+\frac{2}{r^2}\frac{\partial u_r}{\partial \theta}-\frac{u_{\theta}}{r^2}\right)\\ \frac{\partial u_z}{\partial t}+(\underline{u}.\nabla)u_z&amp;=-\frac{1}{\rho}\frac{\partial p}{\partial z}+\nu\nabla^2 u_z \end{align}\]</div>
 <p><strong>Incompressibility:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed6931d7-43c0-427d-8b7d-724c3f012d49">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-ed6931d7-43c0-427d-8b7d-724c3f012d49" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{1}{r}\frac{\partial}{\partial r}(r u_r)+\frac{1}{r}\frac{\partial u_{\theta}}{\partial \theta}+\frac{\partial u_z}{\partial z}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-40d879d4-8bf0-4b8d-99b6-faa963f459fc">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-40d879d4-8bf0-4b8d-99b6-faa963f459fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}\frac{1}{r}\frac{\partial}{\partial r}(r u_r)+\frac{1}{r}\frac{\partial u_{\theta}}{\partial \theta}+\frac{\partial u_z}{\partial z}=0\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da3ab013-8da5-4153-9573-4060ed37b709">
-<span class="eqno">(6.7)<a class="headerlink" href="#equation-da3ab013-8da5-4153-9573-4060ed37b709" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u}.\nabla = u_r\frac{\partial}{\partial r}+\frac{u_{\theta}}{\partial \theta}+u_z\frac{\partial}{\partial z}\qquad \qquad \nabla^2=\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial}{\partial r}\right)+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}+\frac{\partial^2}{\partial z^2} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d674addd-09cc-49f1-b922-777afaa19fe5">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-d674addd-09cc-49f1-b922-777afaa19fe5" title="Permalink to this equation">¶</a></span>\[\begin{equation}\underline{u}.\nabla = u_r\frac{\partial}{\partial r}+\frac{u_{\theta}}{\partial \theta}+u_z\frac{\partial}{\partial z}\qquad \qquad \nabla^2=\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial}{\partial r}\right)+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2}+\frac{\partial^2}{\partial z^2} \end{equation}\]</div>
 </div>
 </div>
 
@@ -430,7 +440,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="conservation.html" title="previous page"><span class="section-number">5. </span>Conservation law derivations</a>
-    <a class='right-next' id="next-link" href="steadysoln.html" title="next page"><span class="section-number">7. </span>Steady Euler solutions</a>
+    <a class='right-next' id="next-link" href="scaling.html" title="next page"><span class="section-number">7. </span>Scaling arguments</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group velocity &#8212; Fluids</title>
+    <title>16. Group velocity &#8212; Fluids</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,6 +56,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="15. Boundary layers" href="boundary.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,7 +93,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="mathideas.html">
    1. Mathematical background
@@ -156,6 +157,21 @@
  <li class="toctree-l1">
   <a class="reference internal" href="soundwaves.html">
    13. Unsteady: Sound waves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scaling.html">
+   14. Scaling arguments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="boundary.html">
+   15. Boundary layers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   16. Group velocity
   </a>
  </li>
 </ul>
@@ -249,20 +265,20 @@
               <div>
                 
   <div class="section" id="group-velocity">
-<h1>Group velocity<a class="headerlink" href="#group-velocity" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">16. </span>Group velocity<a class="headerlink" href="#group-velocity" title="Permalink to this headline">¶</a></h1>
 <p>A useful trigonometric identity</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d304c9c-3399-48fd-922b-332ffc369235">
-<span class="eqno">()<a class="headerlink" href="#equation-7d304c9c-3399-48fd-922b-332ffc369235" title="Permalink to this equation">¶</a></span>\[\begin{align}\cos(\alpha)+\cos(\beta)&amp;=\cos\left(\frac{\alpha-\beta}{2}+\frac{\alpha+\beta}{2}\right)+\cos\left(\frac{\alpha-\beta}{2}-\frac{\alpha+\beta}{2}\right)\\&amp;=\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)-\sin\left(\frac{\alpha-\beta}{2}\right)\sin\left(\frac{\alpha+\beta}{2}\right)\\&amp;+\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)+\sin\left(\frac{\alpha-\beta}{2}\right)\sin\left(\frac{\alpha+\beta}{2}\right)\\&amp;=2\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6dbff695-a836-401c-a300-a5e8aa871a58">
+<span class="eqno">(16.1)<a class="headerlink" href="#equation-6dbff695-a836-401c-a300-a5e8aa871a58" title="Permalink to this equation">¶</a></span>\[\begin{align}\cos(\alpha)+\cos(\beta)&amp;=\cos\left(\frac{\alpha-\beta}{2}+\frac{\alpha+\beta}{2}\right)+\cos\left(\frac{\alpha-\beta}{2}-\frac{\alpha+\beta}{2}\right)\\&amp;=\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)-\sin\left(\frac{\alpha-\beta}{2}\right)\sin\left(\frac{\alpha+\beta}{2}\right)\\&amp;+\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)+\sin\left(\frac{\alpha-\beta}{2}\right)\sin\left(\frac{\alpha+\beta}{2}\right)\\&amp;=2\cos\left(\frac{\alpha-\beta}{2}\right)\cos\left(\frac{\alpha+\beta}{2}\right)\end{align}\]</div>
 <p>Superposition of two harmonic waves
 For two harmonic waves with similar frequencies and wavenumbers:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f72b7e69-7ec1-4f0d-bff0-afd89448f789">
-<span class="eqno">()<a class="headerlink" href="#equation-f72b7e69-7ec1-4f0d-bff0-afd89448f789" title="Permalink to this equation">¶</a></span>\[\begin{align}\phi(x,t)&amp;=A\cos(k_1 x-\omega_1 t)+A\cos(k_2x -\omega_2 t)\\&amp;=2A\cos\left(\frac{k_1-k_2}{2}x-\frac{\omega_1-\omega_2}{2}t\right)\cos\left(\frac{k_1+k_2}{2}x-\frac{\omega_1+\omega_2}{2}t\right)\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-517b1fee-2d02-453d-8df9-48a61b47053f">
+<span class="eqno">(16.2)<a class="headerlink" href="#equation-517b1fee-2d02-453d-8df9-48a61b47053f" title="Permalink to this equation">¶</a></span>\[\begin{align}\phi(x,t)&amp;=A\cos(k_1 x-\omega_1 t)+A\cos(k_2x -\omega_2 t)\\&amp;=2A\cos\left(\frac{k_1-k_2}{2}x-\frac{\omega_1-\omega_2}{2}t\right)\cos\left(\frac{k_1+k_2}{2}x-\frac{\omega_1+\omega_2}{2}t\right)\end{align}\]</div>
 <p>The first cosine is called the “envelope wave”. It has a small frequency and wavenumber in comparison to the second cosine. It’s velocity, called the group velocity is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c338d68a-d1bd-42de-b846-9930abc4ef9a">
-<span class="eqno">()<a class="headerlink" href="#equation-c338d68a-d1bd-42de-b846-9930abc4ef9a" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_g=\frac{\omega_1-\omega_2}{k_1-k_2}=\frac{\Delta\omega}{\Delta k}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-53dde739-411a-42d6-a8f8-19abb0c1e78f">
+<span class="eqno">(16.3)<a class="headerlink" href="#equation-53dde739-411a-42d6-a8f8-19abb0c1e78f" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_g=\frac{\omega_1-\omega_2}{k_1-k_2}=\frac{\Delta\omega}{\Delta k}.\end{equation}\]</div>
 <p>The second cosine is called the “carrier wave”. It’s velocity called the phase velocity is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aba7c312-76ae-40ca-aab5-2165cd156fff">
-<span class="eqno">()<a class="headerlink" href="#equation-aba7c312-76ae-40ca-aab5-2165cd156fff" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_p=\frac{\omega_1+\omega_2}{k_1+k_2}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d1526c53-9748-4fa1-a42b-e4b37fa3c642">
+<span class="eqno">(16.4)<a class="headerlink" href="#equation-d1526c53-9748-4fa1-a42b-e4b37fa3c642" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_p=\frac{\omega_1+\omega_2}{k_1+k_2}.\end{equation}\]</div>
 <p>In the following illustration, the envelope has a wavelength ten times that of the carrier wave, and a velocity twice that of the carrier wave. The wavetrain propagates to the right with amplitude modulation. The unmodulated carrier wave is shown in blue for comparison.</p>
 <p>Since the envelope wave here is travelling faster than the carrier wave, an observer would see waves appearing at the back of the wavetrain and disappearing at the front.</p>
 <a class="reference internal image-reference" href="../_images/train1.gif" id="a-wavetrain"><img alt="a wavetrain" class="align-center" id="a-wavetrain" src="../_images/train1.gif" style="width: 360.0px; height: 72.0px;" /></a>
@@ -272,17 +288,17 @@ For two harmonic waves with similar frequencies and wavenumbers:</p>
 <a class="reference internal image-reference" href="../_images/train3.gif" id="yet-another-wavetrain"><img alt="yet another wavetrain" class="align-center" id="yet-another-wavetrain" src="../_images/train3.gif" style="width: 360.0px; height: 72.0px;" /></a>
 <p>Motion of a wave packet
 We now repeat the above analysis, but for a packet of waves, each having a different amplitude:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e21a925-a566-4b84-8553-16f23a4c7f4e">
-<span class="eqno">()<a class="headerlink" href="#equation-2e21a925-a566-4b84-8553-16f23a4c7f4e" title="Permalink to this equation">¶</a></span>\[\begin{equation}\phi(x,t)=\int_{-\infty}^{\infty}A(k)e^{i(kx-\omega(k)t)}\mathrm{d}k\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8de7c3b8-23d5-43eb-9ade-7141e929ba87">
+<span class="eqno">(16.5)<a class="headerlink" href="#equation-8de7c3b8-23d5-43eb-9ade-7141e929ba87" title="Permalink to this equation">¶</a></span>\[\begin{equation}\phi(x,t)=\int_{-\infty}^{\infty}A(k)e^{i(kx-\omega(k)t)}\mathrm{d}k\end{equation}\]</div>
 <p>We will assume that the wavepacket is almost monochromatic, meaning closely centred around a single frequency. The amplitude function <span class="math notranslate nohighlight">\(A(k)\)</span> might be a sharply peaked Gaussian, for example. This allows the frequency to be linearised around the central frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc4dd076-d9fc-4bce-b899-7bea57e03033">
-<span class="eqno">()<a class="headerlink" href="#equation-bc4dd076-d9fc-4bce-b899-7bea57e03033" title="Permalink to this equation">¶</a></span>\[\begin{equation}\omega(k)\simeq \omega_0+(k-k_0)c_{g0}, \qquad c_{g0}=\frac{\mathrm{d}\omega}{\mathrm{d}k}\biggr|_{k=k_0}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d13a376e-22df-4522-9849-dcd60cd3ff09">
+<span class="eqno">(16.6)<a class="headerlink" href="#equation-d13a376e-22df-4522-9849-dcd60cd3ff09" title="Permalink to this equation">¶</a></span>\[\begin{equation}\omega(k)\simeq \omega_0+(k-k_0)c_{g0}, \qquad c_{g0}=\frac{\mathrm{d}\omega}{\mathrm{d}k}\biggr|_{k=k_0}\end{equation}\]</div>
 <p>This allows the wavepacket to be rewritten in linearised form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9b9a5d62-7451-4323-b5b3-504a1c1f5825">
-<span class="eqno">()<a class="headerlink" href="#equation-9b9a5d62-7451-4323-b5b3-504a1c1f5825" title="Permalink to this equation">¶</a></span>\[\begin{equation}\phi(x,t)=e^{i(k_0 x-\omega t)}\int_{-\infty}^{\infty}A(k)e^{i(k-k_0)(x-c_{g0}t)}\mathrm{d}k.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b8d42cc8-88ad-4d18-b8cd-fd89a26cbfef">
+<span class="eqno">(16.7)<a class="headerlink" href="#equation-b8d42cc8-88ad-4d18-b8cd-fd89a26cbfef" title="Permalink to this equation">¶</a></span>\[\begin{equation}\phi(x,t)=e^{i(k_0 x-\omega t)}\int_{-\infty}^{\infty}A(k)e^{i(k-k_0)(x-c_{g0}t)}\mathrm{d}k.\end{equation}\]</div>
 <p>Again, we see that the result consists of a monochromatic “carrier wave”, that travels with velocity <span class="math notranslate nohighlight">\(c_{p0}\)</span> and an envelope that travels with velocity <span class="math notranslate nohighlight">\(c_{g0}\)</span>, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-008c2b6a-961f-4d79-9bbd-8a31a83f4405">
-<span class="eqno">()<a class="headerlink" href="#equation-008c2b6a-961f-4d79-9bbd-8a31a83f4405" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_{p0}=\frac{\omega_0}{k_0}, \qquad  c_{g0}=\frac{\mathrm{d}\omega}{\mathrm{d}k}\biggr|_{k=k_0}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2fb1d972-89d7-4ed0-a5ec-39eb6d0d7ee4">
+<span class="eqno">(16.8)<a class="headerlink" href="#equation-2fb1d972-89d7-4ed0-a5ec-39eb6d0d7ee4" title="Permalink to this equation">¶</a></span>\[\begin{equation}c_{p0}=\frac{\omega_0}{k_0}, \qquad  c_{g0}=\frac{\mathrm{d}\omega}{\mathrm{d}k}\biggr|_{k=k_0}.\end{equation}\]</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -310,6 +326,7 @@ We now repeat the above analysis, but for a packet of waves, each having a diffe
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="boundary.html" title="previous page"><span class="section-number">15. </span>Boundary layers</a>
 
         </div>
         

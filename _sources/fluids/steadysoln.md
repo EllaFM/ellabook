@@ -1,7 +1,9 @@
+(steady-soln)=
 # Steady Euler solutions
 
 **In this section:**
 * We derive the steady flow profiles for some classic geometries
+
 
 ## General technique
 
@@ -98,6 +100,7 @@ The velocity solution satisfying the no-slip conditions $u(0)=0$ and $u(h)=0$ is
 The mass flux is given by
 \begin{equation}Q=\int_0^h \left(\frac{Pyh}{2\mu}-\frac{Py^2}{2\mu}\right)\mathrm{d}y=\frac{Ph^3}{12\mu}.\end{equation}
 
+(pipe-flow)=
 ## Poiseuille pipe flow
 
 In this example we will consider flow along a pipe of circular cross-section $r=a$, under constant pressure gradient $\frac{\mathrm{d}p}{\mathrm{d}z}=-P$. An illustration of the geometry is provided below:
